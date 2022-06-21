@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
   getStatus(baseUrl: string) {
     return {
-      status: 'Xbox Server is running! 🚀',
+      status: 'Super Trunfo Server is running! 🚀',
       docs: baseUrl + '/api',
     };
   }
