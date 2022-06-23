@@ -4,13 +4,13 @@ import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
 
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-    .setTitle('Sper Trunfo')
-    .setDescription('Plataforma de trading card game')
+    .setTitle('Xbox Server')
+    .setDescription('A microsoft pirate server for xbox games')
     .setVersion('1.0.0')
     .addTag('status')
     .addTag('auth')
