@@ -3,7 +3,7 @@ export class User {
   name: string;
   email: string;
   password: string;
-  cpf: string;
+  CPF: string;
   isAdmin?: boolean;
   createdAt?: Date;
   updatedAt?: Date;

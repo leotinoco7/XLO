@@ -19,7 +19,7 @@ export class UsersService {
       select: {
         name: true,
         email: true,
-        cpf: true,
+        CPF: true,
         isAdmin: true,
         password: false,
       },
@@ -31,7 +31,7 @@ export class UsersService {
       select: {
         name: true,
         email: true,
-        cpf: false,
+        CPF: false,
         isAdmin: true,
         password: false,
       },
