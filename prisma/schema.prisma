@@ -15,20 +15,35 @@ model User {
   name     String
   email    String  @unique
   password String
-  CPF      String  @unique
-  isAdmin  Boolean @default(false)
+  cpf      String  @unique
+  isAdmin  Boolean @default(false) @map("is_admin")
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  @@map("users")
 }
 
 model Collection {
   id           String   @id @default(uuid())
   name         String   @unique
-  cardsNumber  Int
-  packsNumber  Int
+  cardsNumber  Int      @map("cards_number")
+  packsNumber  Int      @map("packs_number")
 
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  @@map("collections")
 }
+
+model Pack {
+  id           String   @id @default(uuid())
+  name         String   @unique
+  cardquantity Int      @default(5) @map("card_quantity")
+  price        Float
+
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  @@map("packs")
+}
+
+
+
