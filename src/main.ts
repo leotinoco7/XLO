@@ -9,8 +9,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-    .setTitle('Xbox Server')
-    .setDescription('A microsoft pirate server for xbox games')
+    .setTitle('Super Trunfo')
+    .setDescription('API developed to build a card game')
     .setVersion('1.0.0')
     .addTag('status')
     .addTag('auth')
