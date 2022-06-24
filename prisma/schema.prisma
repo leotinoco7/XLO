@@ -21,3 +21,14 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Collection {
+  id           String   @id @default(uuid())
+  name         String   @unique
+  cardsNumber  Int
+  packsNumber  Int
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+}
