@@ -22,6 +22,8 @@ export class UsersService {
         CPF: true,
         isAdmin: true,
         password: false,
+        ranking: true,
+        imageUrl: false,
       },
     });
   }
@@ -34,6 +36,8 @@ export class UsersService {
         CPF: false,
         isAdmin: true,
         password: false,
+        ranking: true,
+        imageUrl: false,
       },
     });
   }
