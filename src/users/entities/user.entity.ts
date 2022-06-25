@@ -3,9 +3,7 @@ export class User {
   name: string;
   email: string;
   password: string;
-  CPF: string;
-  imageUrl: string;
-  ranking: number;
+  cpf: string;
   isAdmin?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
