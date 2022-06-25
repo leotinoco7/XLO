@@ -6,7 +6,7 @@ It also has a ranking mechanism, allowing players to face challenging matches.
 ## 🚀 Deploy
 
 Deploy can be found here:
-[Render deploy](https://supertrunfo.onrender.com/)
+[Render deploy](https://supertrunfoblue.herokuapp.com/api/)
 
 ### 📋 Requirements
 
