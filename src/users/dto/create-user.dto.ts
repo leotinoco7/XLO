@@ -2,8 +2,12 @@ import { ApiProperty } from '@nestjs/swagger';
 import {
   IsBoolean,
   IsEmail,
+  IsInt,
   IsNotEmpty,
+  IsPositive,
   IsString,
+  IsUrl,
+  isURL,
   Length,
 } from 'class-validator';
 
@@ -44,6 +48,22 @@ export class CreateUserDto {
   //   message:'the first character of the username must not be a number. Username must contains at least 4 characters',
   // })
   CPF: string;
+
+  @ApiProperty({
+    description: 'Users avatar',
+    example: 'link.com/image.jpg',
+  })
+  @IsString()
+  @IsUrl()
+  imageUrl: string;
+
+  @ApiProperty({
+    description: 'Users ranking',
+    example: '1-2000',
+  })
+  @IsInt()
+  @IsPositive()
+  ranking: number;
 
   @ApiProperty({
     description: 'If user is admin of server',

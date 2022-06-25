@@ -4,6 +4,8 @@ export class User {
   email: string;
   password: string;
   CPF: string;
+  imageUrl: string;
+  ranking: number;
   isAdmin?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
