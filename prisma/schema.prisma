@@ -34,10 +34,25 @@ model Deck {
 }
 
 model Card {
-  id         String @id @default(uuid())
+  id         String    @id @default(uuid())
   name       String
   element    String
-  cardAttack Int
-  cardDef    Int
+  cardAttack Int       @map("card_attack")
+  cardDef    Int       @map("card_def")
 
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  @@map("cards")
+
+}
+
+model Collection {
+  id          String  @id @default(uuid())
+  name        String
+  packNumber  Int     @map("pack_number")
+  cardNumber  Int     @map("card_number")
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  @@map("collections")
 }
