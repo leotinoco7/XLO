@@ -47,7 +47,7 @@ export class CreateUserDto {
   // @Matches( (^\d{3}\x2E\d{3}\x2E\d{3}\x2D\d{2}$), {
   //   message:'the first character of the username must not be a number. Username must contains at least 4 characters',
   // })
-  cpf: string;
+  CPF: string;
 
   @ApiProperty({
     description: 'Users avatar',
