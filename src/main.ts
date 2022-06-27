@@ -15,6 +15,10 @@ async function bootstrap() {
     .addTag('status')
     .addTag('auth')
     .addTag('user')
+    .addTag('card')
+    .addTag('collection')
+    .addTag('deck')
+    .addTag('pack')
     .addBearerAuth()
     .build();
 

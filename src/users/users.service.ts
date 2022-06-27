@@ -24,6 +24,7 @@ export class UsersService {
         password: false,
         ranking: true,
         imageUrl: false,
+        balance: true,
       },
     });
   }
