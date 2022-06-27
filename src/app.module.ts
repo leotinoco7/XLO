@@ -10,7 +10,15 @@ import { CollectionModule } from './collection/collection.module';
 import { PackModule } from './pack/pack.module';
 
 @Module({
-  imports: [PrismaModule, UsersModule, AuthModule, DeckModule, CardModule, CollectionModule, PackModule],
+  imports: [
+    PrismaModule,
+    UsersModule,
+    AuthModule,
+    DeckModule,
+    CardModule,
+    CollectionModule,
+    PackModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
