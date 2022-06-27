@@ -1,14 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsBoolean,
-  IsDecimal,
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsPositive,
   IsString,
   IsUrl,
-  isURL,
   Length,
 } from 'class-validator';
 
@@ -59,8 +58,8 @@ export class CreateUserDto {
   imageUrl: string;
 
   @ApiProperty({
-    description: 'Users ranking',
-    example: '1-2000',
+    description: 'Users ranking. Select a number from 1 to 2000',
+    example: '463',
   })
   @IsInt()
   @IsPositive()
@@ -68,9 +67,9 @@ export class CreateUserDto {
 
   @ApiProperty({
     description: 'Users balance',
-    example: '1000.00',
+    example: '1000.52',
   })
-  @IsDecimal()
+  @IsNumber()
   @IsPositive()
   balance: number;
 
