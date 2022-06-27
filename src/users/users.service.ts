@@ -38,6 +38,7 @@ export class UsersService {
         isAdmin: true,
         password: false,
         ranking: true,
+        balance: true,
         imageUrl: false,
       },
     });

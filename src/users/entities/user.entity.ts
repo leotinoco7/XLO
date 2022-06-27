@@ -6,6 +6,8 @@ export class User {
   CPF: string;
   isAdmin?: boolean;
   balance: number;
+  ranking: number;
+  imageUrl: string;
   createdAt?: Date;
   updatedAt?: Date;
 }

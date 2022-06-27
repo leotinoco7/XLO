@@ -8,7 +8,6 @@ import {
   IsPositive,
   IsString,
   IsUrl,
-  isURL,
   Length,
 } from 'class-validator';
 
