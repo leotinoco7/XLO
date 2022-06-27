@@ -10,7 +10,7 @@ export class CollectionService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createCollectionDto: CreateCollectionDto) {
-    return await this.prisma.collection.create;
+    return await this.prisma.collection.create({ data: createCollectionDto });
   }
 
   async findAll() {
