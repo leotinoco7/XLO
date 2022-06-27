@@ -7,6 +7,7 @@ export class User {
   imageUrl: string;
   ranking: number;
   isAdmin?: boolean;
+  balance: number;
   createdAt?: Date;
   updatedAt?: Date;
 }

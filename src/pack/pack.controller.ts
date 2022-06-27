@@ -10,7 +10,9 @@ import {
 import { PackService } from './pack.service';
 import { CreatePackDto } from './dto/create-pack.dto';
 import { UpdatePackDto } from './dto/update-pack.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('pack')
 @Controller('pack')
 export class PackController {
   constructor(private readonly packService: PackService) {}

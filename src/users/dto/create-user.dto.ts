@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsBoolean,
+  IsDecimal,
   IsEmail,
   IsInt,
   IsNotEmpty,
@@ -64,6 +65,14 @@ export class CreateUserDto {
   @IsInt()
   @IsPositive()
   ranking: number;
+
+  @ApiProperty({
+    description: 'Users balance',
+    example: '1000.00',
+  })
+  @IsDecimal()
+  @IsPositive()
+  balance: number;
 
   @ApiProperty({
     description: 'If user is admin of server',
