@@ -1,26 +1,45 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { notFoundError } from 'src/utils/not-found.util';
 import { CreateDeckDto } from './dto/create-deck.dto';
 import { UpdateDeckDto } from './dto/update-deck.dto';
 
 @Injectable()
 export class DeckService {
-  create(dto: CreateDeckDto) {
-    return 'This action adds a new deck';
+  constructor(private readonly prisma: PrismaService) {}
+  async create(dto: CreateDeckDto) {
+    return await this.prisma.deck.create({ data: dto });
   }
 
-  findAll() {
-    return `This action returns all deck`;
+  async findAll() {
+    const data = await this.prisma.deck.findMany();
+
+    notFoundError(data, 'the decks');
+
+    return data;
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} deck`;
+  async findOne(id: string) {
+    const data = await this.prisma.deck.findUnique({ where: { id } });
+
+    notFoundError(data, 'this deck');
+
+    return data;
   }
 
-  update(id: string, dto: UpdateDeckDto) {
-    return `This action updates a #${id} deck`;
+  async update(id: string, dto: UpdateDeckDto) {
+    const data = await this.prisma.deck.update({ where: { id }, data: dto });
+
+    notFoundError(data, 'this deck');
+
+    return data;
   }
 
-  delete(id: string) {
-    return `This action removes a #${id} deck`;
+  async delete(id: string) {
+    const data = await this.prisma.deck.delete({ where: { id } });
+
+    notFoundError(data, 'this deck');
+
+    return data;
   }
 }

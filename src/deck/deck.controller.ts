@@ -6,13 +6,17 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { DeckService } from './deck.service';
 import { CreateDeckDto } from './dto/create-deck.dto';
 import { UpdateDeckDto } from './dto/update-deck.dto';
 
 @ApiTags('deck')
+@UseGuards(AuthGuard())
+@ApiBearerAuth()
 @Controller('deck')
 export class DeckController {
   constructor(private readonly deckService: DeckService) {}
