@@ -3,16 +3,16 @@ import { IsInt, IsNumber, IsPositive } from 'class-validator';
 
 export class CreatePackDto {
   @ApiProperty({
-    description: '',
-    example: 'link.com/image.jpg',
+    description: 'Amount of cards in the pack',
+    example: '15',
   })
   @IsInt()
   @IsPositive()
   quantity: number;
 
   @ApiProperty({
-    description: 'Users avatar',
-    example: 'link.com/image.jpg',
+    description: 'Price of the pack',
+    example: '12.99',
   })
   @IsNumber()
   @IsPositive()
