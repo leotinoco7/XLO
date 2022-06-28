@@ -41,7 +41,7 @@ model Deck {
 model Card {
   id         String    @id @default(uuid())
   name       String
-  element    String
+  type       String
   cardAttack Int       @map("card_attack")
   cardDef    Int       @map("card_def")
   rarity     String

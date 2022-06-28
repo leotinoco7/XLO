@@ -1,26 +1,35 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
+import { Card } from './entities/card.entity';
 
 @Injectable()
 export class CardService {
-  create(createCardDto: CreateCardDto) {
-    return 'This action adds a new card';
+  constructor(private readonly prisma: PrismaService) {}
+  async create(dto: CreateCardDto) {
+    return await this.prisma.card.create({ data: dto });
   }
 
-  findAll() {
-    return `This action returns all card`;
+  async findAll() {
+    return await this.prisma.card.findMany();
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} card`;
+  async findOne(id: string) {
+    return await this.prisma.card.findUnique({ where: { id } });
   }
 
-  update(id: string, updateCardDto: UpdateCardDto) {
-    return `This action updates a #${id} card`;
+  async update(id: string, dto: UpdateCardDto) {
+    const data: Partial<Card> = { ...dto };
+    return await this.prisma.card.update({ where: { id }, data });
   }
 
-  delete(id: string) {
-    return `This action removes a #${id} card`;
+  async delete(id: string) {
+    await this.prisma.card.delete({
+      where: {
+        id,
+      },
+    });
+    return { message: 'deletado com sucesso' };
   }
 }
