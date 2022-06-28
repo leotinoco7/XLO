@@ -1,5 +1,6 @@
 export class Pack {
   id?: string;
+
   quantity: number;
   price: number;
 
