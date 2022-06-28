@@ -1,26 +1,44 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCollectionDto } from './dto/create-collection.dto';
 import { UpdateCollectionDto } from './dto/update-collection.dto';
+import * as bcrypt from 'bcrypt';
+import { Collection } from './entities/collection.entity';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class CollectionService {
-  create(createCollectionDto: CreateCollectionDto) {
-    return 'This action adds a new collection';
+  constructor(private readonly prisma: PrismaService) {}
+
+  async create(createCollectionDto: CreateCollectionDto) {
+    return await this.prisma.collection.create({ data: createCollectionDto });
   }
 
-  findAll() {
-    return `This action returns all collection`;
+  async findAll() {
+    return await this.prisma.collection.findMany();
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} collection`;
+  async findOne(id: string) {
+    return await this.prisma.collection.findUnique({
+      where: {
+        id,
+      },
+    });
   }
 
-  update(id: string, updateCollectionDto: UpdateCollectionDto) {
-    return `This action updates a #${id} collection`;
+  async update(id: string, dto: UpdateCollectionDto) {
+    const data: Partial<Collection> = { ...dto };
+    return this.prisma.collection.update({
+      where: { id },
+      data,
+    });
   }
 
-  delete(id: string) {
-    return `This action removes a #${id} collection`;
+  async delete(id: string) {
+    await this.prisma.collection.delete({
+      where: {
+        id,
+      },
+    });
+    return { message: 'deletado com sucesso' };
   }
 }

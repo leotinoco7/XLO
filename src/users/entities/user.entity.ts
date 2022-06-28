@@ -4,10 +4,10 @@ export class User {
   email: string;
   password: string;
   CPF: string;
-  imageUrl: string;
-  ranking: number;
   isAdmin?: boolean;
   balance: number;
+  ranking: number;
+  imageUrl: string;
   createdAt?: Date;
   updatedAt?: Date;
 }
