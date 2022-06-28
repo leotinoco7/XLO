@@ -18,8 +18,8 @@ export class CardController {
   constructor(private readonly cardService: CardService) {}
 
   @Post()
-  create(@Body() createCardDto: CreateCardDto) {
-    return this.cardService.create(createCardDto);
+  create(@Body() dto: CreateCardDto) {
+    return this.cardService.create(dto);
   }
 
   @Get()
@@ -33,8 +33,8 @@ export class CardController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCardDto: UpdateCardDto) {
-    return this.cardService.update(id, updateCardDto);
+  update(@Param('id') id: string, @Body() dto: UpdateCardDto) {
+    return this.cardService.update(id, dto);
   }
 
   @Delete(':id')
