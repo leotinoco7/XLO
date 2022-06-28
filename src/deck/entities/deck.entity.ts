@@ -1,7 +1,8 @@
 export class Deck {
   id?: string;
+
   name: string;
-  cardQuantity: number;
+  cardQuantity?: number;
   deckAttack: number;
   deckDefense: number;
 

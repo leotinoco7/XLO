@@ -11,15 +11,15 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(uuid())
+  id       String  @id @default(uuid())
   name     String
-  email    String    @unique
+  email    String  @unique
   password String
-  CPF      String    @unique
-  imageUrl String    @map("image_url")
+  CPF      String  @unique
+  imageUrl String  @map("image_url")
   ranking  Int
   balance  Float
-  isAdmin  Boolean   @default(false) @map("is_admin")
+  isAdmin  Boolean @default(false) @map("is_admin")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -27,48 +27,48 @@ model User {
 }
 
 model Deck {
-  id           String   @id @default(uuid())
+  id           String @id @default(uuid())
   name         String
-  cardQuantity Int      @map("card_quantity")
-  deckAttack   Int      @map("deck_attack")
-  deckDefense  Int      @map("deck_defense")
+  cardQuantity Int    @default(5) @map("card_quantity")
+  deckAttack   Int    @map("deck_attack")
+  deckDefense  Int    @map("deck_defense")
 
-  createdAt    DateTime @default(now()) @map("created_at")
-  updatedAt    DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
   @@map("decks")
 }
 
 model Card {
-  id         String    @id @default(uuid())
+  id         String @id @default(uuid())
   name       String
   type       String
-  cardAttack Int       @map("card_attack")
-  cardDef    Int       @map("card_def")
+  cardAttack Int    @map("card_attack")
+  cardDef    Int    @map("card_def")
   rarity     String
 
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
-  @@map("cards")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
+  @@map("cards")
 }
 
 model Collection {
-  id          String   @id @default(uuid())
-  name        String
-  packNumber  Int      @map("pack_number")
-  cardNumber  Int      @map("card_number")
+  id         String @id @default(uuid())
+  name       String
+  packNumber Int    @map("pack_number")
+  cardNumber Int    @map("card_number")
 
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
   @@map("collections")
 }
 
 model Pack {
-  id          String   @id @default(uuid())
-  quantity    Int
-  price       Float   
+  id       String @id @default(uuid())
+  quantity Int
+  price    Float
 
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
   @@map("packs")
 }
