@@ -11,7 +11,8 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(uuid())
+  id String @id @default(uuid())
+
   name     String
   email    String  @unique
   password String
@@ -20,43 +21,61 @@ model User {
   ranking  Int
   balance  Float
   isAdmin  Boolean @default(false) @map("is_admin")
+  Deck     Deck[]
+  // deck     Deck?
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
+
+
   @@map("users")
 }
 
-model Deck {
-  id           String @id @default(uuid())
-  name         String
-  cardQuantity Int    @default(5) @map("card_quantity")
-  deckAttack   Int    @map("deck_attack")
-  deckDefense  Int    @map("deck_defense")
+// model Deck {
+//   id String @id @default(uuid())
 
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  @@map("decks")
-}
+//   name         String
+//   cardQuantity Int    @default(5) @map("card_quantity")
+//   deckAttack   Int    @map("deck_attack")
+//   deckDefense  Int    @map("deck_defense")
+//   cards        Card[]
+//   user         User   @relation(fields: [userId], references: [id])
+//   userId       String @unique
+
+//   createdAt DateTime @default(now()) @map("created_at")
+//   updatedAt DateTime @updatedAt @map("updated_at")
+
+//   @@map("decks")
+// }
 
 model Card {
-  id         String @id @default(uuid())
-  name       String
-  type       String
-  cardAttack Int    @map("card_attack")
-  cardDef    Int    @map("card_def")
-  rarity     String
+  id String @id @default(uuid())
+
+  name         String
+  type         String
+  cardAttack   Int        @map("card_attack")
+  cardDef      Int        @map("card_def")
+  rarity       String
+  collection   Collection @relation(fields: [collectionId], references: [id])
+  collectionId String     @map("collection_id")
+  Deck         Deck[]
+  // decks        Deck[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
+
 
   @@map("cards")
 }
 
 model Collection {
-  id         String @id @default(uuid())
+  id String @id @default(uuid())
+
   name       String
   packNumber Int    @map("pack_number")
   cardNumber Int    @map("card_number")
+  packs      Pack[]
+  cards      Card[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -64,11 +83,34 @@ model Collection {
 }
 
 model Pack {
-  id       String @id @default(uuid())
-  quantity Int
-  price    Float
+  id String @id @default(uuid())
+
+  cardQuantity Int        @default(5) @map("card_quantity")
+  price        Float
+  collection   Collection @relation(fields: [collectionId], references: [id])
+  collectionId String     @map("collection_id")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   @@map("packs")
+}
+
+model Deck {
+  id String @id @default(uuid())
+
+  deckCard DeckCard @default(OUT) @map("deck_card")
+  user     User     @relation(fields: [userId], references: [id])
+  userId   String   @map("user_id")
+  card     Card     @relation(fields: [cardId], references: [id])
+  cardId   String   @map("card_id")
+
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  @@map("decks")
+}
+
+enum DeckCard {
+  IN
+  OUT
 }
