@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { handleError } from 'src/utils/handle-error.util';
 import { notFoundError } from 'src/utils/not-found.util';
 import { CreateDeckDto } from './dto/create-deck.dto';
 import { UpdateDeckDto } from './dto/update-deck.dto';
@@ -12,7 +13,7 @@ export class DeckService {
   }
 
   async findAll() {
-    const data = await this.prisma.deck.findMany();
+    const data = await this.prisma.deck.findMany().catch(handleError);
 
     notFoundError(data, 'the decks');
 
@@ -20,7 +21,9 @@ export class DeckService {
   }
 
   async findOne(id: string) {
-    const data = await this.prisma.deck.findUnique({ where: { id } });
+    const data = await this.prisma.deck
+      .findUnique({ where: { id } })
+      .catch(handleError);
 
     notFoundError(data, 'this deck');
 
@@ -28,18 +31,28 @@ export class DeckService {
   }
 
   async update(id: string, dto: UpdateDeckDto) {
-    const data = await this.prisma.deck.update({ where: { id }, data: dto });
+    const data = await this.prisma.deck
+      .update({ where: { id }, data: dto })
+      .catch(handleError);
 
-    notFoundError(data, 'this deck');
+    notFoundError(
+      this.prisma.deck.findUnique({ where: { id } }),
+      `this deck (${id})`,
+    );
 
     return data;
   }
 
   async delete(id: string) {
-    const data = await this.prisma.deck.delete({ where: { id } });
+    const data = await this.prisma.deck
+      .delete({ where: { id } })
+      .catch(handleError);
 
-    notFoundError(data, 'this deck');
+    notFoundError(
+      this.prisma.deck.findUnique({ where: { id } }),
+      `this deck (${id})`,
+    );
 
-    return data;
+    return { message: 'Sucessfully deleted' };
   }
 }

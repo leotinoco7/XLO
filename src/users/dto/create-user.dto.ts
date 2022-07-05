@@ -14,7 +14,7 @@ import {
 export class CreateUserDto {
   @ApiProperty({
     description: 'User`s name',
-    example: 'Fulano',
+    example: 'Admin',
   })
   @IsString()
   @IsNotEmpty()
@@ -22,7 +22,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     description: 'User`s Email',
-    example: 'ciclano@blue.com.br',
+    example: 'admin@blue.com.br',
   })
   @IsString()
   @IsNotEmpty()
@@ -31,7 +31,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     description: 'User`s Passaword',
-    example: 'Blue2022',
+    example: 'Admin2022',
   })
   @IsString()
   @IsNotEmpty()
