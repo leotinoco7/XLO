@@ -9,12 +9,16 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-    .setTitle('Super Trunfo')
+    .setTitle('Top Trump')
     .setDescription('API developed to build a card game')
     .setVersion('1.0.0')
     .addTag('status')
     .addTag('auth')
     .addTag('user')
+    .addTag('card')
+    .addTag('collection')
+    .addTag('deck')
+    .addTag('pack')
     .addBearerAuth()
     .build();
 

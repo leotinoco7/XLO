@@ -4,17 +4,17 @@ import {
   IsEmail,
   IsInt,
   IsNotEmpty,
+  IsNumber,
   IsPositive,
   IsString,
   IsUrl,
-  isURL,
   Length,
 } from 'class-validator';
 
 export class CreateUserDto {
   @ApiProperty({
-    description: 'Name for the user',
-    example: 'Leonardo Orabona',
+    description: 'User`s name',
+    example: 'Admin',
   })
   @IsString()
   @IsNotEmpty()
@@ -22,7 +22,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     description: 'User`s Email',
-    example: 'leo@blue.com.br',
+    example: 'admin@blue.com.br',
   })
   @IsString()
   @IsNotEmpty()
@@ -31,7 +31,7 @@ export class CreateUserDto {
 
   @ApiProperty({
     description: 'User`s Passaword',
-    example: 'Blue2022',
+    example: 'Admin2022',
   })
   @IsString()
   @IsNotEmpty()
@@ -58,12 +58,20 @@ export class CreateUserDto {
   imageUrl: string;
 
   @ApiProperty({
-    description: 'Users ranking',
-    example: '1-2000',
+    description: 'Users ranking. Select a number from 1 to 2000',
+    example: '463',
   })
   @IsInt()
   @IsPositive()
   ranking: number;
+
+  @ApiProperty({
+    description: 'Users balance',
+    example: '1000.52',
+  })
+  @IsNumber()
+  @IsPositive()
+  balance: number;
 
   @ApiProperty({
     description: 'If user is admin of server',
