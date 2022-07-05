@@ -44,9 +44,7 @@ export class DeckService {
   }
 
   async delete(id: string) {
-    const data = await this.prisma.deck
-      .delete({ where: { id } })
-      .catch(handleError);
+    this.prisma.deck.delete({ where: { id } }).catch(handleError);
 
     notFoundError(
       this.prisma.deck.findUnique({ where: { id } }),

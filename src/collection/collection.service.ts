@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCollectionDto } from './dto/create-collection.dto';
-import { UpdateCollectionDto } from './dto/update-collection.dto';
-import * as bcrypt from 'bcrypt';
-import { Collection } from './entities/collection.entity';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { handleError } from 'src/utils/handle-error.util';
 import { notFoundError } from 'src/utils/not-found.util';
+import { CreateCollectionDto } from './dto/create-collection.dto';
+import { UpdateCollectionDto } from './dto/update-collection.dto';
+import { Collection } from './entities/collection.entity';
 
 @Injectable()
 export class CollectionService {
