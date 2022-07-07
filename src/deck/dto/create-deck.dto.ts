@@ -19,6 +19,14 @@ export class CreateDeckDto {
   deckAttack: number;
 
   @ApiProperty({
+    description: 'Deck´s Card quantity',
+    example: 6,
+  })
+  @IsInt()
+  @IsPositive()
+  cardQuantity: number;
+
+  @ApiProperty({
     description: 'Defense power from deck',
     example: 23,
   })

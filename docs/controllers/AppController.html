@@ -118,7 +118,7 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Get()<br />@ApiOperation({summary: &#x27;Visualizar status da aplicação&#x27;})<br /></code>
+                    <code>@Get()<br />@ApiOperation({summary: Shows application status})<br /></code>
                 </td>
             </tr>
 
@@ -156,7 +156,7 @@ export class AppController {
 
   @Get()
   @ApiOperation({
-    summary: &#x27;Visualizar status da aplicação&#x27;,
+    summary: &#x60;Shows application status&#x60;,
   })
   getStatus() {
     return this.appService.getStatus(&#x27;http://localhost:3000&#x27;);

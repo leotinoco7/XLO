@@ -83,6 +83,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#balance" >balance</a>
+                            </li>
+                            <li>
                                 <a href="#CPF" >CPF</a>
                             </li>
                             <li>
@@ -97,6 +100,9 @@
                                 <a href="#id" >id</a>
                             </li>
                             <li>
+                                <a href="#imageUrl" >imageUrl</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Optional</span>
                                 <a href="#isAdmin" >isAdmin</a>
                             </li>
@@ -105,6 +111,9 @@
                             </li>
                             <li>
                                 <a href="#password" >password</a>
+                            </li>
+                            <li>
+                                <a href="#ranking" >ranking</a>
                             </li>
                             <li>
                                     <span class="modifier">Optional</span>
@@ -129,6 +138,32 @@
     <h3 id="inputs">
         Properties
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="balance"></a>
+                    <span class="name">
+                        <span ><b>balance</b></span>
+                        <a href="#balance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/users/entities/user.entity.ts:8</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -175,7 +210,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/users/entities/user.entity.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/users/entities/user.entity.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -229,6 +264,32 @@
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="2" class="link-to-prism">src/users/entities/user.entity.ts:2</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imageUrl"></a>
+                    <span class="name">
+                        <span ><b>imageUrl</b></span>
+                        <a href="#imageUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/users/entities/user.entity.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -318,6 +379,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ranking"></a>
+                    <span class="name">
+                        <span ><b>ranking</b></span>
+                        <a href="#ranking"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/users/entities/user.entity.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="updatedAt"></a>
                     <span class="name">
                             <span class="modifier">Optional</span>
@@ -334,7 +421,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/users/entities/user.entity.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/users/entities/user.entity.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -360,6 +447,9 @@
   password: string;
   CPF: string;
   isAdmin?: boolean;
+  balance: number;
+  ranking: number;
+  imageUrl: string;
   createdAt?: Date;
   updatedAt?: Date;
 }

@@ -284,7 +284,7 @@ import { LoggedUser } from &#x27;./logged-user.decorator&#x27;;
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post() // &lt; Novo Decorator
+  @Post()
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
     summary: &#x27;Realizar login, recebendo um token de autenticação&#x27;,

@@ -129,7 +129,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsNotEmpty()<br />@IsEmail()<br />@ApiProperty({description: &#x27;User&#x60;s email address&#x27;, example: &#x27;leo@blue.com.br&#x27;})<br />
+                            @IsString()<br />@IsNotEmpty()<br />@IsEmail()<br />@ApiProperty({description: &#x27;User&#x60;s email address&#x27;, example: &#x27;admin@blue.com.br&#x27;})<br />
                         </code>
                     </td>
                 </tr>
@@ -164,7 +164,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsNotEmpty()<br />@ApiProperty({description: &#x27;User&#x60;s password for authentication&#x27;, example: &#x27;Blue2022&#x27;})<br />
+                            @IsString()<br />@IsNotEmpty()<br />@ApiProperty({description: &#x27;User&#x60;s password for authentication&#x27;, example: &#x27;Admin2022&#x27;})<br />
                         </code>
                     </td>
                 </tr>
@@ -198,7 +198,7 @@ export class LoginDto {
   @IsEmail()
   @ApiProperty({
     description: &#x27;User&#x60;s email address&#x27;,
-    example: &#x27;leo@blue.com.br&#x27;,
+    example: &#x27;admin@blue.com.br&#x27;,
   })
   email: string;
 
@@ -206,7 +206,7 @@ export class LoginDto {
   @IsNotEmpty()
   @ApiProperty({
     description: &#x27;User&#x60;s password for authentication&#x27;,
-    example: &#x27;Blue2022&#x27;,
+    example: &#x27;Admin2022&#x27;,
   })
   password: string;
 }
