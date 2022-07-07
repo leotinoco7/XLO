@@ -5,6 +5,8 @@ export class Card {
   cardAttack: number;
   cardDef: number;
   rarity: string;
+  collectionId: string;
+  deck?: Deck[];
 
   createdAt?: Date;
   updatedAt?: Date;

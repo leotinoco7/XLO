@@ -1,13 +1,16 @@
+import { Deck } from '@prisma/client';
+
 export class User {
   id?: string;
   name: string;
   email: string;
   password: string;
   CPF: string;
-  isAdmin?: boolean;
-  balance: number;
-  ranking: number;
   imageUrl: string;
+  ranking: number;
+  balance: number;
+  isAdmin?: boolean;
+  deck?: Deck[];
   createdAt?: Date;
   updatedAt?: Date;
 }

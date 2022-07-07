@@ -21,13 +21,14 @@ model User {
   ranking  Int
   balance  Float
   isAdmin  Boolean @default(false) @map("is_admin")
-  Deck     Deck[]
+  deck     Deck[]
   // deck     Deck?
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
 
+  UserToCard UserToCard[]
   @@map("users")
 }
 
@@ -58,13 +59,14 @@ model Card {
   rarity       String
   collection   Collection @relation(fields: [collectionId], references: [id])
   collectionId String     @map("collection_id")
-  Deck         Deck[]
+  deck         Deck[]
   // decks        Deck[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
 
+  UserToCard UserToCard[]
   @@map("cards")
 }
 
@@ -98,16 +100,34 @@ model Pack {
 model Deck {
   id String @id @default(uuid())
 
-  deckCard DeckCard @default(OUT) @map("deck_card")
-  user     User     @relation(fields: [userId], references: [id])
-  userId   String   @map("user_id")
-  card     Card     @relation(fields: [cardId], references: [id])
-  cardId   String   @map("card_id")
+  deckCard   DeckCard   @default(OUT) @map("deck_card")
+  user       User       @relation(fields: [userId], references: [id])
+  userId     String     @map("user_id")
+  userToCard UserToCard @relation(fields: [utcId], references: [id])
+  utcId      String     @map("card_id")
 
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
+  Card      Card?    @relation(fields: [cardId], references: [id])
+  cardId    String?
   @@map("decks")
+}
+
+model UserToCard {
+  id String @id @default(uuid())
+
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @map("user_id")
+  card   Card   @relation(fields: [cardId], references: [id])
+  cardId String @map("card_id")
+
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  Deck      Deck[]
+  @@map("user_to_card")
 }
 
 enum DeckCard {
