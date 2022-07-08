@@ -11,6 +11,7 @@
 - [ ] Refactor [Collection] service
 - [ ] Refactor [Card] service
 - [ ] Refactor [Pack] service
+- [ ] Refactor [User] entity & dto
 
 ### Done ✓
 
