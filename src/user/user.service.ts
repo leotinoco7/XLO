@@ -1,11 +1,15 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
+import { Prisma } from '@prisma/client';
+import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { handleError } from 'src/utils/handle-error.util';
+import { notFoundError } from 'src/utils/not-found.util';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
-import * as bcrypt from 'bcrypt';
-import { notFoundError } from 'src/utils/not-found.util';
-import { handleError } from 'src/utils/handle-error.util';
 
 @Injectable()
 export class UsersService {
@@ -22,9 +26,15 @@ export class UsersService {
       throw new BadRequestException('This e-mail/CPF is already in use.');
     }
 
-    const data: User = {
-      ...dto,
+    const data: Prisma.UserCreateInput = {
+      name: dto.name,
+      email: dto.email,
       password: await bcrypt.hash(dto.password, 10),
+      CPF: dto.CPF,
+      imageUrl: dto.imageUrl,
+      ranking: dto.ranking,
+      balance: dto.balance,
+      isAdmin: dto.isAdmin,
     };
 
     return await this.prisma.user
@@ -44,7 +54,12 @@ export class UsersService {
       .catch(handleError);
   }
 
-  async findAll() {
+  // -----------------------------------------------ADMIN------------------------------------------------
+
+  async findAll(isAdmin: boolean) {
+    if (!isAdmin) {
+      throw new UnauthorizedException('Access denied!');
+    }
     return await this.prisma.user
       .findMany({
         select: {
@@ -62,7 +77,10 @@ export class UsersService {
       .catch(handleError);
   }
 
-  async findOne(id: string) {
+  async findOne(id: string, isAdmin: boolean) {
+    if (!isAdmin) {
+      throw new UnauthorizedException('Access denied!');
+    }
     const user = await this.prisma.user
       .findUnique({
         where: {
@@ -87,17 +105,65 @@ export class UsersService {
     return user;
   }
 
-  async update(id: string, dto: UpdateUserDto) {
-    const data: Partial<User> = { ...dto };
-
+  async remove(id: string, isAdmin: boolean) {
+    if (!isAdmin) {
+      throw new UnauthorizedException('Access denied!');
+    }
     notFoundError(
       await this.prisma.user.findUnique({ where: { id } }),
       `this user (${id})`,
     );
 
-    if (data.password) {
-      data.password = await bcrypt.hash(data.password, 10);
+    await this.prisma.user
+      .delete({
+        where: {
+          id,
+        },
+      })
+      .catch(handleError);
+    return { message: 'User successfully deleted!' };
+  }
+
+  // -----------------------------------------------MY ACCOUNT------------------------------------------------
+
+  async findMyAcc(id: string) {
+    const user = await this.prisma.user
+      .findUnique({
+        where: {
+          id,
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          CPF: true,
+          isAdmin: true,
+          password: false,
+          ranking: true,
+          balance: true,
+          imageUrl: true,
+        },
+      })
+      .catch(handleError);
+
+    notFoundError(user, `this user (${id})`);
+
+    return user;
+  }
+
+  async updateMyAcc(id: string, dto: UpdateUserDto) {
+    if (dto.password) {
+      dto.password = await bcrypt.hash(dto.password, 10);
     }
+
+    const data: Prisma.UserUpdateInput = {
+      ...dto,
+    };
+
+    notFoundError(
+      await this.prisma.user.findUnique({ where: { id } }),
+      `this user (${id})`,
+    );
 
     return this.prisma.user
       .update({
@@ -118,7 +184,7 @@ export class UsersService {
       .catch(handleError);
   }
 
-  async remove(id: string) {
+  async deleteMyAcc(id: string) {
     notFoundError(
       await this.prisma.user.findUnique({ where: { id } }),
       `this user (${id})`,

@@ -1,3 +1,5 @@
+import { UserToCard } from '@prisma/client';
+
 export class Card {
   id?: string;
   name: string;
@@ -6,7 +8,7 @@ export class Card {
   cardDef: number;
   rarity: string;
   collectionId: string;
-  deck?: Deck[];
+  utcs: UserToCard[];
 
   createdAt?: Date;
   updatedAt?: Date;

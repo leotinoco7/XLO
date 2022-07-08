@@ -1,5 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNumber, IsPositive, IsString } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsPositive,
+  IsString,
+  IsUUID,
+} from 'class-validator';
 
 export class CreateCardDto {
   @ApiProperty({
@@ -38,4 +44,13 @@ export class CreateCardDto {
   })
   @IsString()
   rarity: string;
+
+  @ApiProperty({
+    description: 'The collection Id in which the card belongs to',
+    example: '8f20f5f2-332a-42f4-9d86-f760feb22a77',
+  })
+  @IsUUID()
+  @IsString()
+  @IsNotEmpty()
+  collectionId: string;
 }
