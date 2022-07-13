@@ -7,6 +7,7 @@ import { Prisma } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { handleError } from 'src/utils/handle-error.util';
+import { isAdmin } from 'src/utils/is-admin.util';
 import { notFoundError } from 'src/utils/not-found.util';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -56,10 +57,9 @@ export class UsersService {
 
   // -----------------------------------------------ADMIN------------------------------------------------
 
-  async findAll(isAdmin: boolean) {
-    if (!isAdmin) {
-      throw new UnauthorizedException('Access denied!');
-    }
+  async findAll(loggedUser) {
+    isAdmin(loggedUser);
+
     return await this.prisma.user
       .findMany({
         select: {

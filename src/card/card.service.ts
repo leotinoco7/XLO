@@ -5,15 +5,32 @@ import { notFoundError } from 'src/utils/not-found.util';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
 import { Card } from './entities/card.entity';
+import { isAdmin } from 'src/utils/is-admin.util';
+import { Prisma } from '@prisma/client';
+import { User } from '@prisma/client';
 
 @Injectable()
 export class CardService {
   constructor(private readonly prisma: PrismaService) {}
-  async create(dto: CreateCardDto) {
-    return await this.prisma.card.create({ data: dto }).catch(handleError);
+
+  create(dto: CreateCardDto, loggedUser) {
+    isAdmin(loggedUser);
+    const data: Prisma.CardCreateInput = {
+      name: dto.name,
+      type: dto.type,
+      cardAttack: dto.cardAttack,
+      cardDef: dto.cardDef,
+      rarity: dto.rarity,
+      collection: {
+        connect: {
+          id: dto.collectionId,
+        },
+      },
+    };
+    return this.prisma.card.create({ data }).catch(handleError);
   }
 
-  async findAll(): Promise<Card[]> {
+  async findAll() {
     const data = await this.prisma.card.findMany().catch(handleError);
 
     notFoundError(data, 'the cards');

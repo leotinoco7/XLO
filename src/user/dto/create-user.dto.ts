@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Deck, UserToCard } from '@prisma/client';
 import {
   IsBoolean,
   IsEmail,
@@ -8,6 +9,7 @@ import {
   IsPositive,
   IsString,
   IsUrl,
+  IsUUID,
   Length,
 } from 'class-validator';
 

@@ -8,10 +8,8 @@
 ### In Progress
 
 - [ ] Refactor [Deck] service
-- [ ] Refactor [Collection] service
 - [ ] Refactor [Card] service
 - [ ] Refactor [Pack] service
-- [ ] Refactor [User] entity & dto
 
 ### Done ✓
 
@@ -19,3 +17,4 @@
 - [x] Refactor [User] service
       [x] Create [Admin] endpoints
       [x] Create [MyAccount] endpoints
+- [x] Refactor [Collection] service

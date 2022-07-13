@@ -12,14 +12,6 @@ export class DeckService {
     return await this.prisma.deck.create({ data: dto });
   }
 
-  async findAll() {
-    const data = await this.prisma.deck.findMany().catch(handleError);
-
-    notFoundError(data, 'the decks');
-
-    return data;
-  }
-
   async findOne(id: string) {
     const data = await this.prisma.deck
       .findUnique({ where: { id } })

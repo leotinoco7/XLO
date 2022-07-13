@@ -1,19 +1,26 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { handleError } from 'src/utils/handle-error.util';
+import { isAdmin } from 'src/utils/is-admin.util';
 import { notFoundError } from 'src/utils/not-found.util';
 import { CreateCollectionDto } from './dto/create-collection.dto';
 import { UpdateCollectionDto } from './dto/update-collection.dto';
-import { Collection } from './entities/collection.entity';
 
 @Injectable()
 export class CollectionService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(createCollectionDto: CreateCollectionDto) {
-    return await this.prisma.collection
-      .create({ data: createCollectionDto })
-      .catch(handleError);
+  async create(dto: CreateCollectionDto, loggedUser) {
+    isAdmin(loggedUser);
+
+    const data: Prisma.CollectionCreateInput = {
+      name: dto.name,
+      cardNumber: dto.cardNumber,
+      packNumber: dto.packNumber,
+    };
+
+    return await this.prisma.collection.create({ data }).catch(handleError);
   }
 
   async findAll() {
@@ -33,8 +40,10 @@ export class CollectionService {
     return collection;
   }
 
-  async update(id: string, dto: UpdateCollectionDto) {
-    const data: Partial<Collection> = { ...dto };
+  async update(id: string, dto: UpdateCollectionDto, loggedUser) {
+    isAdmin(loggedUser);
+
+    const data: Prisma.UserUpdateInput = { ...dto };
 
     notFoundError(
       this.prisma.collection.findUnique({ where: { id } }),
@@ -49,7 +58,9 @@ export class CollectionService {
       .catch(handleError);
   }
 
-  async delete(id: string) {
+  async delete(id: string, loggedUser) {
+    isAdmin(loggedUser);
+
     await this.prisma.collection
       .delete({
         where: {

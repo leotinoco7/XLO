@@ -10,6 +10,8 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { User } from '@prisma/client';
+import { LoggedUser } from 'src/auth/logged-user.decorator';
 import { CardService } from './card.service';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
@@ -26,15 +28,15 @@ export class CardController {
   @ApiOperation({
     summary: 'Create a card',
   })
-  create(@Body() dto: CreateCardDto) {
-    return this.cardService.create(dto);
+  create(@Body() dto: CreateCardDto, @LoggedUser() user: User) {
+    return this.cardService.create(dto, user.isAdmin);
   }
 
   @Get()
   @ApiOperation({
     summary: 'Get all the cards in a collection',
   })
-  findAll(): Promise<Card[]> {
+  findAll() {
     return this.cardService.findAll();
   }
 

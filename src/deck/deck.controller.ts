@@ -26,11 +26,6 @@ export class DeckController {
     return this.deckService.create(dto);
   }
 
-  @Get()
-  findAll() {
-    return this.deckService.findAll();
-  }
-
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.deckService.findOne(id);
