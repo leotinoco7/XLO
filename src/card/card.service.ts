@@ -1,19 +1,30 @@
-import { Injectable } from '@nestjs/common';
-import { handleError } from 'src/utils/handle-error.util';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { handleError } from 'src/utils/handle-error.util';
+import { isAdmin } from 'src/utils/is-admin.util';
 import { notFoundError } from 'src/utils/not-found.util';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
-import { Card } from './entities/card.entity';
-import { isAdmin } from 'src/utils/is-admin.util';
-import { Prisma } from '@prisma/client';
-import { User } from '@prisma/client';
 
 @Injectable()
 export class CardService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(dto: CreateCardDto, loggedUser) {
+    async function collectionLimit() {
+      const limit = await this.prisma.collection.findUnique({
+        where: { id: dto.collectionId },
+      });
+
+      if (limit.cards.length >= limit.cardNumber) {
+        throw new BadRequestException(
+          'This collection has reached its card limit.',
+        );
+      }
+    }
+
+    collectionLimit();
     isAdmin(loggedUser);
     const data: Prisma.CardCreateInput = {
       name: dto.name,
@@ -40,31 +51,45 @@ export class CardService {
 
   async findOne(id: string) {
     const data = await this.prisma.card
-      .findUnique({ where: { id } })
+      .findUnique({
+        where: { id },
+        include: {
+          collection: {
+            select: {
+              name: true,
+            },
+          },
+        },
+      })
       .catch(handleError);
     notFoundError(data, `this card (${id})`);
     return data;
   }
 
-  async update(id: string, dto: UpdateCardDto) {
-    const data: Partial<Card> = { ...dto };
+  async update(id: string, dto: UpdateCardDto, loggedUser) {
+    isAdmin(loggedUser);
+    const data: Prisma.CardUpdateInput = {
+      ...dto,
+    };
     notFoundError(
-      this.prisma.card.findUnique({ where: { id } }),
+      await this.prisma.card.findUnique({ where: { id } }),
       `this card (${id})`,
     );
-    return await this.prisma.card
-      .update({ where: { id }, data })
+    return this.prisma.card
+      .update({
+        where: { id },
+        data,
+      })
       .catch(handleError);
   }
 
-  async delete(id: string) {
-    const data = await this.prisma.card
-      .delete({ where: { id } })
-      .catch(handleError);
+  async delete(id: string, loggedUser) {
+    isAdmin(loggedUser);
+    await this.prisma.card.delete({ where: { id } }).catch(handleError);
     notFoundError(
       this.prisma.card.findUnique({ where: { id } }),
       `this card (${id})`,
     );
-    return data;
+    return { message: 'Card deleted successfully!' };
   }
 }

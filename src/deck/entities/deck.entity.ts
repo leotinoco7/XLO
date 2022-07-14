@@ -1,10 +1,8 @@
 export class Deck {
   id?: string;
 
-  name: string;
-  cardQuantity?: number;
-  deckAttack: number;
-  deckDefense: number;
+  userId?: string;
+  utcId?: string;
 
   createdAt?: Date;
   updatedAt?: Date;

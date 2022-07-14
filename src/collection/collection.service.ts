@@ -17,7 +17,6 @@ export class CollectionService {
     const data: Prisma.CollectionCreateInput = {
       name: dto.name,
       cardNumber: dto.cardNumber,
-      packNumber: dto.packNumber,
     };
 
     return await this.prisma.collection.create({ data }).catch(handleError);

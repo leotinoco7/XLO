@@ -1,8 +1,11 @@
+import { Card } from '@prisma/client';
+
 export class Collection {
   id?: string;
+
   name: string;
-  packNumber: number;
   cardNumber: number;
+  cards: Card[];
 
   createdAt?: Date;
   updatedAt?: Date;

@@ -1,4 +1,5 @@
 import { Deck } from '@prisma/client';
+import { UserToCard } from '@prisma/client';
 
 export class User {
   id?: string;
@@ -11,6 +12,7 @@ export class User {
   balance: number;
   isAdmin?: boolean;
   deck?: Deck[];
+  utcs?: UserToCard[];
   createdAt?: Date;
   updatedAt?: Date;
 }

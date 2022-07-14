@@ -11,14 +11,6 @@ export class CreateCollectionDto {
   name: string;
 
   @ApiProperty({
-    description: 'Pack number',
-    example: '13',
-  })
-  @IsNumber()
-  @IsNotEmpty()
-  packNumber: number;
-
-  @ApiProperty({
     description: 'Card number',
     example: '7',
   })

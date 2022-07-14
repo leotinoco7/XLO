@@ -54,8 +54,12 @@ export class CardController {
   @ApiOperation({
     summary: 'Edit a card by ID',
   })
-  update(@Param('id') id: string, @Body() dto: UpdateCardDto) {
-    return this.cardService.update(id, dto);
+  update(
+    @Param('id') id: string,
+    @Body() dto: UpdateCardDto,
+    @LoggedUser() user: User,
+  ) {
+    return this.cardService.update(id, dto, user.isAdmin);
   }
 
   @UseGuards(AuthGuard())
@@ -64,7 +68,7 @@ export class CardController {
   @ApiOperation({
     summary: 'Remove a card by its ID',
   })
-  delete(@Param('id') id: string) {
-    return this.cardService.delete(id);
+  delete(@Param('id') id: string, @LoggedUser() user: User) {
+    return this.cardService.delete(id, user.isAdmin);
   }
 }
