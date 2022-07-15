@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { PackService } from './pack.service';
-import { PackController } from './pack.controller';
+import { PackService } from './user-to-card.service';
+import { PackController } from './user-to-card.controller';
 import { PrismaModule } from 'src/prisma/prisma.module';
 import { PassportModule } from '@nestjs/passport';
 

@@ -1,11 +1,11 @@
 import {
-  Controller,
-  Get,
-  Post,
   Body,
-  Patch,
-  Param,
+  Controller,
   Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
   UseGuards,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
@@ -15,7 +15,6 @@ import { LoggedUser } from 'src/auth/logged-user.decorator';
 import { CardService } from './card.service';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
-import { Card } from './entities/card.entity';
 
 @ApiTags('card')
 @Controller('card')
@@ -30,14 +29,6 @@ export class CardController {
   })
   create(@Body() dto: CreateCardDto, @LoggedUser() user: User) {
     return this.cardService.create(dto, user.isAdmin);
-  }
-
-  @Get()
-  @ApiOperation({
-    summary: 'Get all the cards in a collection',
-  })
-  findAll() {
-    return this.cardService.findAll();
   }
 
   @Get(':id')

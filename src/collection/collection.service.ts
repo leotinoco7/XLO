@@ -23,9 +23,12 @@ export class CollectionService {
   }
 
   async findAll() {
-    return await this.prisma.collection.findMany().catch(handleError);
-  }
+    const data = await this.prisma.card.findMany().catch(handleError);
 
+    notFoundError(data, 'the collections');
+
+    return data;
+  }
   async findOne(id: string) {
     const collection = await this.prisma.collection
       .findUnique({
@@ -35,7 +38,7 @@ export class CollectionService {
       })
       .catch(handleError);
 
-    notFoundError(collection, 'the collections');
+    notFoundError(collection, 'the collection');
     return collection;
   }
 

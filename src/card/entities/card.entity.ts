@@ -1,4 +1,4 @@
-import { UserToCard } from '@prisma/client';
+import { Rarity, UserToCard } from '@prisma/client';
 
 export class Card {
   id?: string;
@@ -6,7 +6,7 @@ export class Card {
   type: string;
   cardAttack: number;
   cardDef: number;
-  rarity: string;
+  rarity: Rarity;
   collectionId: string;
   utcs: UserToCard[];
 

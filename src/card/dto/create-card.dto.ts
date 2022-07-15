@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Rarity } from '@prisma/client';
 import {
   IsNotEmpty,
   IsNumber,
@@ -43,7 +44,7 @@ export class CreateCardDto {
     example: 'common',
   })
   @IsString()
-  rarity: string;
+  rarity: Rarity;
 
   @ApiProperty({
     description: 'The collection Id in which the card belongs to',

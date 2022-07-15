@@ -41,14 +41,6 @@ export class CardService {
     return this.prisma.card.create({ data }).catch(handleError);
   }
 
-  async findAll() {
-    const data = await this.prisma.card.findMany().catch(handleError);
-
-    notFoundError(data, 'the cards');
-
-    return data;
-  }
-
   async findOne(id: string) {
     const data = await this.prisma.card
       .findUnique({

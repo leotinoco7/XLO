@@ -7,7 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { DeckModule } from './deck/deck.module';
 import { CardModule } from './card/card.module';
 import { CollectionModule } from './collection/collection.module';
-import { PackModule } from './pack/pack.module';
+import { PackModule } from './user-to-card/user-to-card.module';
 
 @Module({
   imports: [

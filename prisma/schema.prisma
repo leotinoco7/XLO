@@ -39,7 +39,7 @@ model Card {
   type         String
   cardAttack   Int          @map("card_attack")
   cardDef      Int          @map("card_def")
-  rarity       Rarity     
+  rarity       Rarity
   collection   Collection   @relation(fields: [collectionId], references: [id])
   collectionId String       @map("collection_id")
   utcs         UserToCard[]
@@ -70,7 +70,7 @@ model Deck {
   user       User       @relation(fields: [userId], references: [id])
   userId     String     @unique @map("user_id")
   userToCard UserToCard @relation(fields: [utcId], references: [id])
-  utcId      String     @map("card_id")
+  utcId      String     @unique @map("card_id")
 
 
   createdAt DateTime @default(now()) @map("created_at")
@@ -85,10 +85,10 @@ model UserToCard {
   userId String @map("user_id")
   card   Card   @relation(fields: [cardId], references: [id])
   cardId String @map("card_id")
+  deck   Deck?
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
-  Deck      Deck[]
   @@map("user_to_card")
 }
 
