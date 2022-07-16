@@ -23,7 +23,7 @@ export class CollectionService {
   }
 
   async findAll() {
-    const data = await this.prisma.card.findMany().catch(handleError);
+    const data = await this.prisma.collection.findMany().catch(handleError);
 
     notFoundError(data, 'the collections');
 

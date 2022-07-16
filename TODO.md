@@ -1,20 +1,26 @@
 ### Todo
 
 - [ ] Test cpf & email validator on create user endpoint
-- [ ] Create function pack()
 - [ ] Create [User] Battle
 - [ ] Create Marketplace
 - [ ] Create Seed
 
 ### In Progress
 
-- [ ] Refactor [Pack] service
+- [ ] Reorganize Swagger
+- [ ] Create ApiOperations [Collection]
+- [ ] Create ApiOperations [Pack]
+- [ ] Create ApiOperations [User]
+- [ ] Create ApiOperations [Deck]
+
+- [ ] Fix Update myAccount [User]
+- [ ] Fix Create collection - unique name
+- [ ] Remove AuthGuard [collection] findAll & findOne
+- [ ] Treat Rarity input [Card] 
 
 - [ ] Add findAll 'myaccount/cards' [User] controller
 - [ ] Add findOne 'myaccount/albun' [User] controller
-
 - [ ] Add findAll 'cards' [Card] controller
-
 - [ ] Refactor findOne [Collection] controller (select cards[])
 
 ### Done ✓
@@ -26,3 +32,5 @@
 - [x] Refactor [Collection] service
 - [x] Refactor [Deck] service
 - [x] Refactor [Card] service
+- [x] Refactor [Pack] service
+- [x] Create function pack()
