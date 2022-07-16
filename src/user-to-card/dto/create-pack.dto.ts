@@ -2,10 +2,10 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsUUID } from 'class-validator';
 
 export class CreatePackDto {
-  @ApiProperty({
-    description: 'Collection id',
-    example: '-- UUID here --',
-  })
   @IsUUID()
+  @ApiProperty({
+    description: 'A Collection UUID',
+    example: '--- UUID here ---',
+  })
   collectionId: string;
 }

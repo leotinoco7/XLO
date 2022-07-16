@@ -14,7 +14,7 @@ export class PackController {
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @Post()
-  create(@Body() collectionId: CreatePackDto, @LoggedUser() user: User) {
-    return this.packService.create(collectionId, user);
+  create(@Body() dto: CreatePackDto, @LoggedUser() user: User) {
+    return this.packService.create(dto, user);
   }
 }
