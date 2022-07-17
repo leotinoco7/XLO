@@ -126,11 +126,11 @@ export class UsersService {
 
   // -----------------------------------------------MY ACCOUNT------------------------------------------------
 
-  async findMyAcc(id: string) {
+  async findMyAcc(loggedUser: string) {
     const user = await this.prisma.user
       .findUnique({
         where: {
-          id,
+          id: loggedUser,
         },
         select: {
           id: true,
@@ -142,16 +142,82 @@ export class UsersService {
           ranking: true,
           balance: true,
           imageUrl: true,
+          deck: {
+            select: {
+              id: true,
+              userToCard: {
+                select: {
+                  id: true,
+                  card: {
+                    select: {
+                      id: true,
+                      name: true,
+                      rarity: true,
+                      type: true,
+                      cardAttack: true,
+                      cardDef: true,
+                      collection: {
+                        select: {
+                          id: true,
+                          name: true,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          _count: {
+            select: {
+              utcs: true,
+            },
+          },
         },
       })
       .catch(handleError);
 
-    notFoundError(user, `this user (${id})`);
+    return user;
+  }
+
+  async findMyAlbum(loggedUser: string) {
+    const user = await this.prisma.user
+      .findUnique({
+        where: {
+          id: loggedUser,
+        },
+        select: {
+          id: true,
+          name: true,
+          utcs: {
+            select: {
+              id: true,
+              card: {
+                select: {
+                  id: true,
+                  name: true,
+                  rarity: true,
+                  type: true,
+                  cardAttack: true,
+                  cardDef: true,
+                  collection: {
+                    select: {
+                      id: true,
+                      name: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      })
+      .catch(handleError);
 
     return user;
   }
 
-  async updateMyAcc(id: string, dto: UpdateUserDto) {
+  async updateMyAcc(dto: UpdateUserDto, loggedUser: string) {
     if (dto.password) {
       dto.password = await bcrypt.hash(dto.password, 10);
     }
@@ -160,14 +226,9 @@ export class UsersService {
       ...dto,
     };
 
-    notFoundError(
-      await this.prisma.user.findUnique({ where: { id } }),
-      `this user (${id})`,
-    );
-
     return this.prisma.user
       .update({
-        where: { id },
+        where: { id: loggedUser },
         data,
         select: {
           id: true,
@@ -184,19 +245,14 @@ export class UsersService {
       .catch(handleError);
   }
 
-  async deleteMyAcc(id: string) {
-    notFoundError(
-      await this.prisma.user.findUnique({ where: { id } }),
-      `this user (${id})`,
-    );
-
+  async deleteMyAcc(loggedUser: string) {
     await this.prisma.user
       .delete({
         where: {
-          id,
+          id: loggedUser,
         },
       })
       .catch(handleError);
-    return { message: 'User successfully deleted!' };
+    return { message: 'Your account was successfully deleted!' };
   }
 }

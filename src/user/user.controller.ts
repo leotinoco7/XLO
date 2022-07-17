@@ -65,15 +65,23 @@ export class UsersController {
   @ApiTags('user-my-account')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
-  @Patch('my-account')
-  update(@LoggedUser() user: User, @Body() updateUserDto: UpdateUserDto) {
-    return this.usersService.updateMyAcc(user.id, updateUserDto);
+  @Get('my-account/album')
+  findMyAlbum(@LoggedUser() user: User) {
+    return this.usersService.findMyAlbum(user.id);
   }
 
   @ApiTags('user-my-account')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @Patch('my-account')
+  update(@Body() updateUserDto: UpdateUserDto, @LoggedUser() user: User) {
+    return this.usersService.updateMyAcc(updateUserDto, user.id);
+  }
+
+  @ApiTags('user-my-account')
+  @UseGuards(AuthGuard())
+  @ApiBearerAuth()
+  @Delete('my-account')
   delete(@LoggedUser() user: User) {
     return this.usersService.deleteMyAcc(user.id);
   }

@@ -24,8 +24,9 @@ export class CardService {
       }
     }
 
-    collectionLimit();
     isAdmin(loggedUser);
+    collectionLimit();
+
     const data: Prisma.CardCreateInput = {
       name: dto.name,
       type: dto.type,
@@ -38,6 +39,9 @@ export class CardService {
         },
       },
     };
+
+    data.rarity = this.dataTreatment(data.rarity);
+
     return this.prisma.card.create({ data }).catch(handleError);
   }
 
@@ -83,5 +87,12 @@ export class CardService {
       `this card (${id})`,
     );
     return { message: 'Card deleted successfully!' };
+  }
+
+  dataTreatment(data) {
+    return data
+      .normalize('NFD')
+      .replace(/[^a-zA-Zs]/g, '')
+      .toUpperCase();
   }
 }

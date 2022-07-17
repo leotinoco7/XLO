@@ -28,13 +28,11 @@ export class CollectionController {
     return this.collectionService.create(dto, user.isAdmin);
   }
 
-  @ApiBearerAuth()
   @Get()
   findAll() {
     return this.collectionService.findAll();
   }
 
-  @ApiBearerAuth()
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.collectionService.findOne(id);
