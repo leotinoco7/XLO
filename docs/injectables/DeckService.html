@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -88,15 +88,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#findAll" >findAll</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#findOne" >findOne</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#update" >update</a>
+                                <a href="#reset" >reset</a>
                             </li>
                         </ul>
                     </td>
@@ -179,7 +171,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(dto: <a href="../classes/CreateDeckDto.html" target="_self">CreateDeckDto</a>)</code>
+                    <code>create(dto: <a href="../classes/CreateDeckDto.html" target="_self">CreateDeckDto</a>, loggedUserId)</code>
                 </td>
             </tr>
 
@@ -219,6 +211,17 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>loggedUserId</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -250,15 +253,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/deck/deck.service.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/deck/deck.service.ts:38</a></div>
                 </td>
             </tr>
 
@@ -280,6 +283,18 @@
                             <tbody>
                                 <tr>
                                     <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userId</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -310,65 +325,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="findAll"></a>
+                    <a name="reset"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
-                        <span ><b>findAll</b></span>
-                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>reset</b></span>
+                        <a href="#reset"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findAll()</code>
+                    <code>reset(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/deck/deck.service.ts:15</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findOne"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>findOne</b></span>
-                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/deck/deck.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/deck/deck.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -389,92 +365,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>userId</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="update"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>update</b></span>
-                        <a href="#update"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateDeckDto.html" target="_self">UpdateDeckDto</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/deck/deck.service.ts:33</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>dto</td>
-                                    <td>
-                                                <code><a href="../classes/UpdateDeckDto.html" target="_self" >UpdateDeckDto</a></code>
                                     </td>
 
                                     <td>
@@ -505,60 +398,56 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Injectable } from &#x27;@nestjs/common&#x27;;
+import { Prisma } from &#x27;@prisma/client&#x27;;
 import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
 import { handleError } from &#x27;src/utils/handle-error.util&#x27;;
 import { notFoundError } from &#x27;src/utils/not-found.util&#x27;;
 import { CreateDeckDto } from &#x27;./dto/create-deck.dto&#x27;;
-import { UpdateDeckDto } from &#x27;./dto/update-deck.dto&#x27;;
 
 @Injectable()
 export class DeckService {
   constructor(private readonly prisma: PrismaService) {}
-  async create(dto: CreateDeckDto) {
-    return await this.prisma.deck.create({ data: dto });
+  async create(dto: CreateDeckDto, loggedUserId) {
+    async function deckLimit(limitNumber) {
+      const limit &#x3D; await this.prisma.deck.findMany({
+        where: { userId: loggedUserId },
+      });
+
+      if (limit.length &gt;&#x3D; limitNumber) {
+        throw new BadRequestException(&#x27;Your deck has reached its limit.&#x27;);
+      }
+    }
+
+    deckLimit(3);
+    const data: Prisma.DeckCreateInput &#x3D; {
+      user: {
+        connect: {
+          id: loggedUserId,
+        },
+      },
+      userToCard: {
+        connect: {
+          id: dto.utcId,
+        },
+      },
+    };
+    return await this.prisma.deck.create({ data }).catch(handleError);
   }
 
-  async findAll() {
-    const data &#x3D; await this.prisma.deck.findMany().catch(handleError);
-
-    notFoundError(data, &#x27;the decks&#x27;);
-
-    return data;
-  }
-
-  async findOne(id: string) {
-    const data &#x3D; await this.prisma.deck
-      .findUnique({ where: { id } })
-      .catch(handleError);
-
-    notFoundError(data, &#x27;this deck&#x27;);
-
-    return data;
-  }
-
-  async update(id: string, dto: UpdateDeckDto) {
-    const data &#x3D; await this.prisma.deck
-      .update({ where: { id }, data: dto })
-      .catch(handleError);
-
+  async delete(id: string, userId: string) {
     notFoundError(
-      this.prisma.deck.findUnique({ where: { id } }),
+      this.prisma.deck.findUnique({ where: { id, userId } }),
       &#x60;this deck (${id})&#x60;,
     );
-
-    return data;
+    this.prisma.deck.delete({ where: { id, userId } }).catch(handleError);
+    return { message: &#x27;Card sucessfuly removed.&#x27; };
   }
 
-  async delete(id: string) {
-    this.prisma.deck.delete({ where: { id } }).catch(handleError);
+  async reset(userId: string) {
+    this.prisma.deck.deleteMany({ where: { userId } });
 
-    notFoundError(
-      this.prisma.deck.findUnique({ where: { id } }),
-      &#x60;this deck (${id})&#x60;,
-    );
-
-    return { message: &#x27;Sucessfully deleted&#x27; };
+    return { message: &#x27;Your deck have been cleaned.&#x27; };
   }
 }
 </code></pre>

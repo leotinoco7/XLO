@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -90,9 +90,6 @@
                                 <a href="#delete" >delete</a>
                             </li>
                             <li>
-                                <a href="#findAll" >findAll</a>
-                            </li>
-                            <li>
                                 <a href="#findOne" >findOne</a>
                             </li>
                             <li>
@@ -128,7 +125,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>create(dto: <a href="../classes/CreateCardDto.html" target="_self">CreateCardDto</a>)</code>
+<code>create(dto: <a href="../classes/CreateCardDto.html" target="_self">CreateCardDto</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -142,8 +139,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/card/card.controller.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/card/card.controller.ts:30</a></div>
                 </td>
             </tr>
 
@@ -167,6 +164,18 @@
                                     <td>dto</td>
                                     <td>
                                                 <code><a href="../classes/CreateCardDto.html" target="_self" >CreateCardDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
                                     </td>
 
                                     <td>
@@ -204,7 +213,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -218,8 +227,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/card/card.controller.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/card/card.controller.ts:62</a></div>
                 </td>
             </tr>
 
@@ -251,6 +260,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -262,50 +283,6 @@
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findAll"></a>
-                    <span class="name">
-                        <span ><b>findAll</b></span>
-                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>findAll()</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Get()<br />@ApiOperation({summary: &#x27;Get all the cards in a collection&#x27;})<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/card/card.controller.ts:37</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Card.html" target="_self" >Promise&lt;Card[]&gt;</a></code>
-
                     </div>
                 </td>
             </tr>
@@ -338,8 +315,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/card/card.controller.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/card/card.controller.ts:38</a></div>
                 </td>
             </tr>
 
@@ -400,7 +377,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateCardDto.html" target="_self">UpdateCardDto</a>)</code>
+<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateCardDto.html" target="_self">UpdateCardDto</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -414,8 +391,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/card/card.controller.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/card/card.controller.ts:48</a></div>
                 </td>
             </tr>
 
@@ -459,6 +436,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -480,21 +469,22 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  Controller,
-  Get,
-  Post,
   Body,
-  Patch,
-  Param,
+  Controller,
   Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
   UseGuards,
 } from &#x27;@nestjs/common&#x27;;
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
 import { ApiBearerAuth, ApiOperation, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { User } from &#x27;@prisma/client&#x27;;
+import { LoggedUser } from &#x27;src/auth/logged-user.decorator&#x27;;
 import { CardService } from &#x27;./card.service&#x27;;
 import { CreateCardDto } from &#x27;./dto/create-card.dto&#x27;;
 import { UpdateCardDto } from &#x27;./dto/update-card.dto&#x27;;
-import { Card } from &#x27;./entities/card.entity&#x27;;
 
 @ApiTags(&#x27;card&#x27;)
 @Controller(&#x27;card&#x27;)
@@ -507,16 +497,8 @@ export class CardController {
   @ApiOperation({
     summary: &#x27;Create a card&#x27;,
   })
-  create(@Body() dto: CreateCardDto) {
-    return this.cardService.create(dto);
-  }
-
-  @Get()
-  @ApiOperation({
-    summary: &#x27;Get all the cards in a collection&#x27;,
-  })
-  findAll(): Promise&lt;Card[]&gt; {
-    return this.cardService.findAll();
+  create(@Body() dto: CreateCardDto, @LoggedUser() user: User) {
+    return this.cardService.create(dto, user.isAdmin);
   }
 
   @Get(&#x27;:id&#x27;)
@@ -533,8 +515,12 @@ export class CardController {
   @ApiOperation({
     summary: &#x27;Edit a card by ID&#x27;,
   })
-  update(@Param(&#x27;id&#x27;) id: string, @Body() dto: UpdateCardDto) {
-    return this.cardService.update(id, dto);
+  update(
+    @Param(&#x27;id&#x27;) id: string,
+    @Body() dto: UpdateCardDto,
+    @LoggedUser() user: User,
+  ) {
+    return this.cardService.update(id, dto, user.isAdmin);
   }
 
   @UseGuards(AuthGuard())
@@ -543,8 +529,8 @@ export class CardController {
   @ApiOperation({
     summary: &#x27;Remove a card by its ID&#x27;,
   })
-  delete(@Param(&#x27;id&#x27;) id: string) {
-    return this.cardService.delete(id);
+  delete(@Param(&#x27;id&#x27;) id: string, @LoggedUser() user: User) {
+    return this.cardService.delete(id, user.isAdmin);
   }
 }
 </code></pre>

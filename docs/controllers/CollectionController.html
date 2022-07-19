@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -128,7 +128,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>create(dto: <a href="../classes/CreateCollectionDto.html" target="_self">CreateCollectionDto</a>)</code>
+<code>create(dto: <a href="../classes/CreateCollectionDto.html" target="_self">CreateCollectionDto</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -136,14 +136,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Post()<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Admin - Create a collection&#x27;})<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Post()<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/collection/collection.controller.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/collection/collection.controller.ts:30</a></div>
                 </td>
             </tr>
 
@@ -167,6 +167,18 @@
                                     <td>dto</td>
                                     <td>
                                                 <code><a href="../classes/CreateCollectionDto.html" target="_self" >CreateCollectionDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
                                     </td>
 
                                     <td>
@@ -204,7 +216,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -212,14 +224,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Delete(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Admin - Remove a collection by ID&#x27;})<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Delete(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/collection/collection.controller.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/collection/collection.controller.ts:70</a></div>
                 </td>
             </tr>
 
@@ -243,6 +255,18 @@
                                     <td>id</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
                                     </td>
 
                                     <td>
@@ -288,14 +312,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get()<br /></code>
+                    <code>@ApiOperation({summary: &#x27;List all the collections&#x27;})<br />@Get()<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/collection/collection.controller.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/collection/collection.controller.ts:38</a></div>
                 </td>
             </tr>
 
@@ -332,14 +356,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;List a collection by ID&#x27;})<br />@Get(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/collection/collection.controller.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/collection/collection.controller.ts:46</a></div>
                 </td>
             </tr>
 
@@ -400,7 +424,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateCollectionDto.html" target="_self">UpdateCollectionDto</a>)</code>
+<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateCollectionDto.html" target="_self">UpdateCollectionDto</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -408,14 +432,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Patch(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Admin - Edit a collection by ID&#x27;})<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Patch(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/collection/collection.controller.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/collection/collection.controller.ts:56</a></div>
                 </td>
             </tr>
 
@@ -459,6 +483,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -490,7 +526,9 @@
   UseGuards,
 } from &#x27;@nestjs/common&#x27;;
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
-import { ApiBearerAuth, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { ApiBearerAuth, ApiOperation, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { User } from &#x27;@prisma/client&#x27;;
+import { LoggedUser } from &#x27;src/auth/logged-user.decorator&#x27;;
 import { CollectionService } from &#x27;./collection.service&#x27;;
 import { CreateCollectionDto } from &#x27;./dto/create-collection.dto&#x27;;
 import { UpdateCollectionDto } from &#x27;./dto/update-collection.dto&#x27;;
@@ -500,39 +538,54 @@ import { UpdateCollectionDto } from &#x27;./dto/update-collection.dto&#x27;;
 export class CollectionController {
   constructor(private readonly collectionService: CollectionService) {}
 
+  @ApiOperation({
+    summary: &#x27;Admin - Create a collection&#x27;,
+  })
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @Post()
-  create(@Body() dto: CreateCollectionDto) {
-    return this.collectionService.create(dto);
+  create(@Body() dto: CreateCollectionDto, @LoggedUser() user: User) {
+    return this.collectionService.create(dto, user.isAdmin);
   }
 
-  @UseGuards(AuthGuard())
-  @ApiBearerAuth()
+  @ApiOperation({
+    summary: &#x27;List all the collections&#x27;,
+  })
   @Get()
   findAll() {
     return this.collectionService.findAll();
   }
 
-  @UseGuards(AuthGuard())
-  @ApiBearerAuth()
+  @ApiOperation({
+    summary: &#x27;List a collection by ID&#x27;,
+  })
   @Get(&#x27;:id&#x27;)
   findOne(@Param(&#x27;id&#x27;) id: string) {
     return this.collectionService.findOne(id);
   }
 
+  @ApiOperation({
+    summary: &#x27;Admin - Edit a collection by ID&#x27;,
+  })
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @Patch(&#x27;:id&#x27;)
-  update(@Param(&#x27;id&#x27;) id: string, @Body() dto: UpdateCollectionDto) {
-    return this.collectionService.update(id, dto);
+  update(
+    @Param(&#x27;id&#x27;) id: string,
+    @Body() dto: UpdateCollectionDto,
+    @LoggedUser() user: User,
+  ) {
+    return this.collectionService.update(id, dto, user.isAdmin);
   }
 
+  @ApiOperation({
+    summary: &#x27;Admin - Remove a collection by ID&#x27;,
+  })
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @Delete(&#x27;:id&#x27;)
-  delete(@Param(&#x27;id&#x27;) id: string) {
-    return this.collectionService.delete(id);
+  delete(@Param(&#x27;id&#x27;) id: string, @LoggedUser() user: User) {
+    return this.collectionService.delete(id, user.isAdmin);
   }
 }
 </code></pre>

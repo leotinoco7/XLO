@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -80,15 +80,18 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#collectionLimit" >collectionLimit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                <a href="#dataTreatment" >dataTreatment</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#delete" >delete</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#findAll" >findAll</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -121,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/card/card.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/card/card.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -168,6 +171,73 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="collectionLimit"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>collectionLimit</b></span>
+                        <a href="#collectionLimit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>collectionLimit(dto)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/card/card.service.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dto</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="create"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
@@ -179,15 +249,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(dto: <a href="../classes/CreateCardDto.html" target="_self">CreateCardDto</a>)</code>
+                    <code>create(dto: <a href="../classes/CreateCardDto.html" target="_self">CreateCardDto</a>, loggedUser)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/card/card.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/card/card.service.ts:14</a></div>
                 </td>
             </tr>
 
@@ -219,6 +289,17 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>loggedUser</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -226,6 +307,71 @@
                     </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataTreatment"></a>
+                    <span class="name">
+                        <span ><b>dataTreatment</b></span>
+                        <a href="#dataTreatment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>dataTreatment(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/card/card.service.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                     <div class="io-description">
@@ -250,15 +396,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, loggedUser)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/card/card.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/card/card.service.ts:78</a></div>
                 </td>
             </tr>
 
@@ -290,6 +436,17 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>loggedUser</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -301,45 +458,6 @@
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findAll"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>findAll</b></span>
-                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findAll()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/card/card.service.ts:16</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Card.html" target="_self" >Promise&lt;Card[]&gt;</a></code>
-
                     </div>
                 </td>
             </tr>
@@ -367,8 +485,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/card/card.service.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/card/card.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -431,15 +549,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateCardDto.html" target="_self">UpdateCardDto</a>)</code>
+                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateCardDto.html" target="_self">UpdateCardDto</a>, loggedUser)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/card/card.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/card/card.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -483,6 +601,17 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>loggedUser</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -505,57 +634,113 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
-import { handleError } from &#x27;src/utils/handle-error.util&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Injectable } from &#x27;@nestjs/common&#x27;;
+import { Prisma } from &#x27;@prisma/client&#x27;;
 import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
+import { handleError } from &#x27;src/utils/handle-error.util&#x27;;
+import { isAdmin } from &#x27;src/utils/is-admin.util&#x27;;
 import { notFoundError } from &#x27;src/utils/not-found.util&#x27;;
 import { CreateCardDto } from &#x27;./dto/create-card.dto&#x27;;
 import { UpdateCardDto } from &#x27;./dto/update-card.dto&#x27;;
-import { Card } from &#x27;./entities/card.entity&#x27;;
 
 @Injectable()
 export class CardService {
   constructor(private readonly prisma: PrismaService) {}
-  async create(dto: CreateCardDto) {
-    return await this.prisma.card.create({ data: dto }).catch(handleError);
-  }
 
-  async findAll(): Promise&lt;Card[]&gt; {
-    const data &#x3D; await this.prisma.card.findMany().catch(handleError);
+  async create(dto: CreateCardDto, loggedUser) {
+    isAdmin(loggedUser);
 
-    notFoundError(data, &#x27;the cards&#x27;);
+    const limit &#x3D; await this.collectionLimit(dto);
 
-    return data;
+    if (!limit) {
+      throw new BadRequestException({
+        message: &#x27;This collection has reached its limit!&#x27;,
+      });
+    }
+
+    const data: Prisma.CardCreateInput &#x3D; {
+      name: dto.name,
+      type: dto.type,
+      cardAttack: dto.cardAttack,
+      cardDef: dto.cardDef,
+      rarity: dto.rarity,
+      collection: {
+        connect: {
+          id: dto.collectionId,
+        },
+      },
+    };
+
+    data.rarity &#x3D; this.dataTreatment(data.rarity);
+
+    return this.prisma.card.create({ data }).catch(handleError);
   }
 
   async findOne(id: string) {
     const data &#x3D; await this.prisma.card
-      .findUnique({ where: { id } })
+      .findUnique({
+        where: { id },
+        include: {
+          collection: {
+            select: {
+              name: true,
+            },
+          },
+        },
+      })
       .catch(handleError);
     notFoundError(data, &#x60;this card (${id})&#x60;);
     return data;
   }
 
-  async update(id: string, dto: UpdateCardDto) {
-    const data: Partial&lt;Card&gt; &#x3D; { ...dto };
+  async update(id: string, dto: UpdateCardDto, loggedUser) {
+    isAdmin(loggedUser);
+    const data: Prisma.CardUpdateInput &#x3D; {
+      ...dto,
+    };
+    data.rarity &#x3D; this.dataTreatment(data.rarity);
     notFoundError(
-      this.prisma.card.findUnique({ where: { id } }),
+      await this.prisma.card.findUnique({ where: { id } }),
       &#x60;this card (${id})&#x60;,
     );
-    return await this.prisma.card
-      .update({ where: { id }, data })
+    return this.prisma.card
+      .update({
+        where: { id },
+        data,
+      })
       .catch(handleError);
   }
 
-  async delete(id: string) {
-    const data &#x3D; await this.prisma.card
-      .delete({ where: { id } })
-      .catch(handleError);
+  async delete(id: string, loggedUser) {
+    isAdmin(loggedUser);
+    await this.prisma.card.delete({ where: { id } }).catch(handleError);
     notFoundError(
       this.prisma.card.findUnique({ where: { id } }),
       &#x60;this card (${id})&#x60;,
     );
-    return data;
+    return { message: &#x27;Card deleted successfully!&#x27; };
+  }
+
+  dataTreatment(data) {
+    return data
+      .normalize(&#x27;NFD&#x27;)
+      .replace(/[^a-zA-Zs]/g, &#x27;&#x27;)
+      .toUpperCase();
+  }
+  async collectionLimit(dto) {
+    const limit &#x3D; await this.prisma.collection.findUnique({
+      where: { id: dto.collectionId },
+      include: {
+        cards: true,
+      },
+    });
+    console.log({ limit });
+    console.log(limit.cards.length);
+    if (limit.cards.length &gt;&#x3D; limit.cardNumber) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
 </code></pre>

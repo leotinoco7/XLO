@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -90,13 +90,7 @@
                                 <a href="#delete" >delete</a>
                             </li>
                             <li>
-                                <a href="#findAll" >findAll</a>
-                            </li>
-                            <li>
-                                <a href="#findOne" >findOne</a>
-                            </li>
-                            <li>
-                                <a href="#update" >update</a>
+                                <a href="#reset" >reset</a>
                             </li>
                         </ul>
                     </td>
@@ -128,7 +122,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>create(dto: <a href="../classes/CreateDeckDto.html" target="_self">CreateDeckDto</a>)</code>
+<code>create(dto: <a href="../classes/CreateDeckDto.html" target="_self">CreateDeckDto</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -136,14 +130,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post()<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Create a deck for the logged user&#x27;})<br />@Post()<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/deck/deck.controller.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/deck/deck.controller.ts:27</a></div>
                 </td>
             </tr>
 
@@ -167,6 +161,18 @@
                                     <td>dto</td>
                                     <td>
                                                 <code><a href="../classes/CreateDeckDto.html" target="_self" >CreateDeckDto</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
                                     </td>
 
                                     <td>
@@ -204,7 +210,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -212,127 +218,7 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Delete(&#x27;:id&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/deck/deck.controller.ts:45</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findAll"></a>
-                    <span class="name">
-                        <span ><b>findAll</b></span>
-                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>findAll()</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Get()<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/deck/deck.controller.ts:30</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findOne"></a>
-                    <span class="name">
-                        <span ><b>findOne</b></span>
-                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Get(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Delete the deck of the logged user&#x27;})<br />@Delete(&#x27;:id&#x27;)<br /></code>
                 </td>
             </tr>
 
@@ -371,6 +257,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -391,16 +289,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="update"></a>
+                    <a name="reset"></a>
                     <span class="name">
-                        <span ><b>update</b></span>
-                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>reset</b></span>
+                        <a href="#reset"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateDeckDto.html" target="_self">UpdateDeckDto</a>)</code>
+<code>reset(user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -408,14 +306,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Patch(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Reset the deck of the logged user&#x27;})<br />@Delete()<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/deck/deck.controller.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/deck/deck.controller.ts:43</a></div>
                 </td>
             </tr>
 
@@ -436,21 +334,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>user</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>dto</td>
-                                    <td>
-                                                <code><a href="../classes/UpdateDeckDto.html" target="_self" >UpdateDeckDto</a></code>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
                                     </td>
 
                                     <td>
@@ -480,20 +366,19 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  Controller,
-  Get,
-  Post,
   Body,
-  Patch,
-  Param,
+  Controller,
   Delete,
+  Param,
+  Post,
   UseGuards,
 } from &#x27;@nestjs/common&#x27;;
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
-import { ApiBearerAuth, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { ApiBearerAuth, ApiOperation, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { User } from &#x27;@prisma/client&#x27;;
+import { LoggedUser } from &#x27;src/auth/logged-user.decorator&#x27;;
 import { DeckService } from &#x27;./deck.service&#x27;;
 import { CreateDeckDto } from &#x27;./dto/create-deck.dto&#x27;;
-import { UpdateDeckDto } from &#x27;./dto/update-deck.dto&#x27;;
 
 @ApiTags(&#x27;deck&#x27;)
 @UseGuards(AuthGuard())
@@ -502,29 +387,28 @@ import { UpdateDeckDto } from &#x27;./dto/update-deck.dto&#x27;;
 export class DeckController {
   constructor(private readonly deckService: DeckService) {}
 
+  @ApiOperation({
+    summary: &#x27;Create a deck for the logged user&#x27;,
+  })
   @Post()
-  create(@Body() dto: CreateDeckDto) {
-    return this.deckService.create(dto);
+  create(@Body() dto: CreateDeckDto, @LoggedUser() user: User) {
+    return this.deckService.create(dto, user.id);
   }
 
-  @Get()
-  findAll() {
-    return this.deckService.findAll();
-  }
-
-  @Get(&#x27;:id&#x27;)
-  findOne(@Param(&#x27;id&#x27;) id: string) {
-    return this.deckService.findOne(id);
-  }
-
-  @Patch(&#x27;:id&#x27;)
-  update(@Param(&#x27;id&#x27;) id: string, @Body() dto: UpdateDeckDto) {
-    return this.deckService.update(id, dto);
-  }
-
+  @ApiOperation({
+    summary: &#x27;Delete the deck of the logged user&#x27;,
+  })
   @Delete(&#x27;:id&#x27;)
-  delete(@Param(&#x27;id&#x27;) id: string) {
-    return this.deckService.delete(id);
+  delete(@Param(&#x27;id&#x27;) id: string, @LoggedUser() user: User) {
+    return this.deckService.delete(id, user.id);
+  }
+
+  @ApiOperation({
+    summary: &#x27;Reset the deck of the logged user&#x27;,
+  })
+  @Delete()
+  reset(@LoggedUser() user: User) {
+    return this.deckService.reset(user.id);
   }
 }
 </code></pre>

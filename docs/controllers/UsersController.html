@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -55,15 +55,9 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/users/users.controller.ts</code>
+            <code>src/user/user.controller.ts</code>
         </p>
 
-            <p class="comment">
-                <h3>Prefix</h3>
-            </p>
-            <p class="comment">
-                <code>users</code>
-            </p>
 
 
 
@@ -87,7 +81,16 @@
                                 <a href="#create" >create</a>
                             </li>
                             <li>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
                                 <a href="#findAll" >findAll</a>
+                            </li>
+                            <li>
+                                <a href="#findMyAcc" >findMyAcc</a>
+                            </li>
+                            <li>
+                                <a href="#findMyAlbum" >findMyAlbum</a>
                             </li>
                             <li>
                                 <a href="#findOne" >findOne</a>
@@ -136,14 +139,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post()<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Create a new user&#x27;})<br />@ApiTags(&#x27;create-user&#x27;)<br />@Post(&#x27;user&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/users/users.controller.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/user/user.controller.ts:28</a></div>
                 </td>
             </tr>
 
@@ -195,16 +198,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="findAll"></a>
+                    <a name="delete"></a>
                     <span class="name">
-                        <span ><b>findAll</b></span>
-                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>findAll()</code>
+<code>delete(user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -212,58 +215,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get()<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Delete logged user&#x27;s account&#x27;})<br />@ApiTags(&#x27;user-my-account&#x27;)<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Delete(&#x27;my-account&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/users/users.controller.ts:30</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findOne"></a>
-                    <span class="name">
-                        <span ><b>findOne</b></span>
-                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get(&#x27;:id&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/users/users.controller.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/user/user.controller.ts:109</a></div>
                 </td>
             </tr>
 
@@ -283,6 +242,322 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAll"></a>
+                    <span class="name">
+                        <span ><b>findAll</b></span>
+                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findAll(user: <a href="../classes/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({summary: &#x27;Admin - List all users&#x27;})<br />@ApiTags(&#x27;user-admin&#x27;)<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get(&#x27;user&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/user/user.controller.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findMyAcc"></a>
+                    <span class="name">
+                        <span ><b>findMyAcc</b></span>
+                        <a href="#findMyAcc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findMyAcc(user: <a href="../classes/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({summary: &#x27;Get logged user&#x27;s account&#x27;})<br />@ApiTags(&#x27;user-my-account&#x27;)<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get(&#x27;my-account&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/user/user.controller.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findMyAlbum"></a>
+                    <span class="name">
+                        <span ><b>findMyAlbum</b></span>
+                        <a href="#findMyAlbum"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findMyAlbum(user: <a href="../classes/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({summary: &#x27;Get logged user&#x27;s album&#x27;})<br />@ApiTags(&#x27;user-my-account&#x27;)<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get(&#x27;my-account/album&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/user/user.controller.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOne"></a>
+                    <span class="name">
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findOne(user: <a href="../classes/User.html" target="_self">User</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({summary: &#x27;Admin - List a user by ID&#x27;})<br />@ApiTags(&#x27;user-admin&#x27;)<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Get(&#x27;user/:id&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/user/user.controller.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                                 <tr>
                                     <td>id</td>
                                     <td>
@@ -324,7 +599,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>remove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>remove(user: <a href="../classes/User.html" target="_self">User</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -332,14 +607,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Delete(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Admin - Edit a user by ID&#x27;})<br />@ApiTags(&#x27;user-admin&#x27;)<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Delete(&#x27;user/:id&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/users/users.controller.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/user/user.controller.ts:63</a></div>
                 </td>
             </tr>
 
@@ -359,6 +634,18 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                                 <tr>
                                     <td>id</td>
                                     <td>
@@ -400,7 +687,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updateUserDto: <a href="../classes/UpdateUserDto.html" target="_self">UpdateUserDto</a>)</code>
+<code>update(updateUserDto: <a href="../classes/UpdateUserDto.html" target="_self">UpdateUserDto</a>, user: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
@@ -408,14 +695,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Patch(&#x27;:id&#x27;)<br /></code>
+                    <code>@ApiOperation({summary: &#x27;Edit logged user&#x27;s account&#x27;})<br />@ApiTags(&#x27;user-my-account&#x27;)<br />@UseGuards(undefined)<br />@ApiBearerAuth()<br />@Patch(&#x27;my-account&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/users/users.controller.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/user/user.controller.ts:98</a></div>
                 </td>
             </tr>
 
@@ -436,9 +723,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>updateUserDto</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="../classes/UpdateUserDto.html" target="_self" >UpdateUserDto</a></code>
                                     </td>
 
                                     <td>
@@ -448,9 +735,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>updateUserDto</td>
+                                    <td>user</td>
                                     <td>
-                                                <code><a href="../classes/UpdateUserDto.html" target="_self" >UpdateUserDto</a></code>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
                                     </td>
 
                                     <td>
@@ -489,48 +776,106 @@
   Delete,
   UseGuards,
 } from &#x27;@nestjs/common&#x27;;
-import { UsersService } from &#x27;./users.service&#x27;;
+import { UsersService } from &#x27;./user.service&#x27;;
 import { CreateUserDto } from &#x27;./dto/create-user.dto&#x27;;
 import { UpdateUserDto } from &#x27;./dto/update-user.dto&#x27;;
-import { ApiBearerAuth, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { ApiBearerAuth, ApiOperation, ApiTags } from &#x27;@nestjs/swagger&#x27;;
 import { AuthGuard } from &#x27;@nestjs/passport&#x27;;
+import { LoggedUser } from &#x27;src/auth/logged-user.decorator&#x27;;
+import { User } from &#x27;@prisma/client&#x27;;
 
-@ApiTags(&#x27;user&#x27;)
-@Controller(&#x27;users&#x27;)
+@Controller()
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
+  @ApiOperation({
+    summary: &#x27;Create a new user&#x27;,
+  })
+  @ApiTags(&#x27;create-user&#x27;)
+  @Post(&#x27;user&#x27;)
   create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
   }
 
+  // -----------------------------------------------ADMIN------------------------------------------------
+
+  @ApiOperation({
+    summary: &#x27;Admin - List all users&#x27;,
+  })
+  @ApiTags(&#x27;user-admin&#x27;)
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
+  @Get(&#x27;user&#x27;)
+  findAll(@LoggedUser() user: User) {
+    return this.usersService.findAll(user.isAdmin);
   }
 
+  @ApiOperation({
+    summary: &#x27;Admin - List a user by ID&#x27;,
+  })
+  @ApiTags(&#x27;user-admin&#x27;)
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
-  @Get(&#x27;:id&#x27;)
-  findOne(@Param(&#x27;id&#x27;) id: string) {
-    return this.usersService.findOne(id);
+  @Get(&#x27;user/:id&#x27;)
+  findOne(@LoggedUser() user: User, @Param(&#x27;id&#x27;) id: string) {
+    return this.usersService.findOne(id, user.isAdmin);
   }
 
+  @ApiOperation({
+    summary: &#x27;Admin - Edit a user by ID&#x27;,
+  })
+  @ApiTags(&#x27;user-admin&#x27;)
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
-  @Patch(&#x27;:id&#x27;)
-  update(@Param(&#x27;id&#x27;) id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.usersService.update(id, updateUserDto);
+  @Delete(&#x27;user/:id&#x27;)
+  remove(@LoggedUser() user: User, @Param(&#x27;id&#x27;) id: string) {
+    return this.usersService.remove(id, user.isAdmin);
   }
 
+  // -----------------------------------------------MY ACCOUNT------------------------------------------------
+
+  @ApiOperation({
+    summary: &quot;Get logged user&#x27;s account&quot;,
+  })
+  @ApiTags(&#x27;user-my-account&#x27;)
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
-  @Delete(&#x27;:id&#x27;)
-  remove(@Param(&#x27;id&#x27;) id: string) {
-    return this.usersService.remove(id);
+  @Get(&#x27;my-account&#x27;)
+  findMyAcc(@LoggedUser() user: User) {
+    return this.usersService.findMyAcc(user.id);
+  }
+
+  @ApiOperation({
+    summary: &quot;Get logged user&#x27;s album&quot;,
+  })
+  @ApiTags(&#x27;user-my-account&#x27;)
+  @UseGuards(AuthGuard())
+  @ApiBearerAuth()
+  @Get(&#x27;my-account/album&#x27;)
+  findMyAlbum(@LoggedUser() user: User) {
+    return this.usersService.findMyAlbum(user.id);
+  }
+
+  @ApiOperation({
+    summary: &quot;Edit logged user&#x27;s account&quot;,
+  })
+  @ApiTags(&#x27;user-my-account&#x27;)
+  @UseGuards(AuthGuard())
+  @ApiBearerAuth()
+  @Patch(&#x27;my-account&#x27;)
+  update(@Body() updateUserDto: UpdateUserDto, @LoggedUser() user: User) {
+    return this.usersService.updateMyAcc(updateUserDto, user.id);
+  }
+
+  @ApiOperation({
+    summary: &quot;Delete logged user&#x27;s account&quot;,
+  })
+  @ApiTags(&#x27;user-my-account&#x27;)
+  @UseGuards(AuthGuard())
+  @ApiBearerAuth()
+  @Delete(&#x27;my-account&#x27;)
+  delete(@LoggedUser() user: User) {
+    return this.usersService.deleteMyAcc(user.id);
   }
 }
 </code></pre>

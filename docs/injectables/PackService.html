@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -58,7 +58,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/pack/pack.service.ts</code>
+            <code>src/user-to-card/user-to-card.service.ts</code>
         </p>
 
 
@@ -79,24 +79,14 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#CardGenaretor" >CardGenaretor</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Async</span>
                                 <a href="#create" >create</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#delete" >delete</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#findAll" >findAll</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#findOne" >findOne</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#update" >update</a>
+                                <a href="#CreatePack" >CreatePack</a>
                             </li>
                         </ul>
                     </td>
@@ -121,7 +111,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/pack/pack.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/user-to-card/user-to-card.service.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -168,6 +158,80 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="CardGenaretor"></a>
+                    <span class="name">
+                        <span ><b>CardGenaretor</b></span>
+                        <a href="#CardGenaretor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>CardGenaretor(list, n)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/user-to-card/user-to-card.service.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>list</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>n</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="create"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
@@ -179,15 +243,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>create(dto: <a href="../classes/CreatePackDto.html" target="_self">CreatePackDto</a>)</code>
+                    <code>create(dto: <a href="../classes/CreatePackDto.html" target="_self">CreatePackDto</a>, loggedUser: <a href="../classes/User.html" target="_self">User</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/pack/pack.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/user-to-card/user-to-card.service.ts:10</a></div>
                 </td>
             </tr>
 
@@ -219,6 +283,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>loggedUser</td>
+                                    <td>
+                                                <code><a href="../classes/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -239,26 +315,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="delete"></a>
+                    <a name="CreatePack"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>delete</b></span>
-                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>CreatePack</b></span>
+                        <a href="#CreatePack"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>delete(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>CreatePack(collection, qnt)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/pack/pack.service.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/user-to-card/user-to-card.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -273,16 +347,21 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
-                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>collection</td>
+
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        No
                                     </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>qnt</td>
 
                                     <td>
                                         No
@@ -296,200 +375,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findAll"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>findAll</b></span>
-                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findAll()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/pack/pack.service.ts:24</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="findOne"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>findOne</b></span>
-                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/pack/pack.service.ts:32</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="update"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>update</b></span>
-                        <a href="#update"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdatePackDto.html" target="_self">UpdatePackDto</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/pack/pack.service.ts:42</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>dto</td>
-                                    <td>
-                                                <code><a href="../classes/UpdatePackDto.html" target="_self" >UpdatePackDto</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
+                        <b>Returns : </b>    <code>{}</code>
 
                     </div>
                     <div class="io-description">
@@ -506,66 +392,96 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Injectable } from &#x27;@nestjs/common&#x27;;
+import { User } from &#x27;@prisma/client&#x27;;
 import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
-import { handleError } from &#x27;src/utils/handle-error.util&#x27;;
-import { notFoundError } from &#x27;src/utils/not-found.util&#x27;;
 import { CreatePackDto } from &#x27;./dto/create-pack.dto&#x27;;
-import { UpdatePackDto } from &#x27;./dto/update-pack.dto&#x27;;
 
 @Injectable()
 export class PackService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(dto: CreatePackDto) {
-    const pack &#x3D; await this.prisma.pack
-      .create({ data: dto })
-      .catch(handleError);
+  async create(dto: CreatePackDto, loggedUser: User) {
+    const collection &#x3D; await this.prisma.card.findMany({
+      where: { collectionId: dto.collectionId },
+    });
 
-    if (pack.price &lt; 1 || pack.quantity &lt; 1) {
-      throw new BadRequestException(&#x27;Please select a positive value&#x27;);
+    const list &#x3D; await this.CardGenaretor(collection, 3);
+    const pack &#x3D; [];
+    list.forEach((card) &#x3D;&gt; {
+      pack.push(card);
+    });
+
+    // const pack &#x3D; await this.CreatePack(collection, 3);
+
+    console.log(pack);
+
+    const transactions &#x3D; pack.map((utc) &#x3D;&gt;
+      this.prisma.userToCard.create({
+        data: {
+          user: {
+            connect: {
+              id: loggedUser.id,
+            },
+          },
+          card: {
+            connect: {
+              id: utc.id,
+            },
+          },
+        },
+      }),
+    );
+    return this.prisma.$transaction(transactions);
+  }
+
+  CreatePack(collection, qnt) {
+    const common &#x3D; [];
+    const rare &#x3D; [];
+    const legendary &#x3D; [];
+    const pack &#x3D; [];
+
+    collection.map(function (card) {
+      if (card.rarity &#x3D;&#x3D;&#x3D; &#x27;COMMON&#x27;) {
+        common.push(card);
+      }
+    });
+
+    collection.map(function (card) {
+      if (card.rarity &#x3D;&#x3D;&#x3D; &#x27;RARE&#x27;) {
+        rare.push(card);
+      }
+    });
+    collection.map(function (card) {
+      if (card.rarity &#x3D;&#x3D;&#x3D; &#x27;LEGENDARY&#x27;) {
+        legendary.push(card);
+      }
+    });
+
+    if (common.length &#x3D;&#x3D; 0 || rare.length &#x3D;&#x3D; 0 || legendary.length &#x3D;&#x3D; 0) {
+      throw new BadRequestException(&#x27;&#x27;);
     }
 
+    for (let i &#x3D; 0; i &lt; qnt; i++) {
+      const rarity &#x3D; Math.floor(Math.random() * 100) + 1;
+
+      if (rarity &gt;&#x3D; 95) {
+        const leg &#x3D; this.CardGenaretor(legendary, 1);
+        pack.push(leg);
+      } else if (rarity &gt;&#x3D; 60) {
+        const rar &#x3D; this.CardGenaretor(rare, 1);
+        pack.push(rar);
+      } else {
+        const com &#x3D; this.CardGenaretor(common, 1);
+        pack.push(com);
+      }
+    }
     return pack;
   }
 
-  async findAll() {
-    const data &#x3D; await this.prisma.pack.findMany().catch(handleError);
-
-    notFoundError(data, &#x27;the packs&#x27;);
-
-    return data;
-  }
-
-  async findOne(id: string) {
-    const data &#x3D; await this.prisma.pack
-      .findUnique({ where: { id } })
-      .catch(handleError);
-
-    notFoundError(data, &#x27;this pack&#x27;);
-
-    return data;
-  }
-
-  async update(id: string, dto: UpdatePackDto) {
-    const pack &#x3D; await this.prisma.pack
-      .update({ where: { id }, data: dto })
-      .catch(handleError);
-
-    if (pack.price &lt; 1 || pack.quantity &lt; 1) {
-      throw new BadRequestException(&#x27;Please select a positive value&#x27;);
-    }
-
-    return pack;
-  }
-
-  async delete(id: string) {
-    const data &#x3D; await this.prisma.pack
-      .delete({ where: { id } })
-      .catch(handleError);
-
-    notFoundError(data, &#x27;this pack&#x27;);
-
-    return { message: &#x27;Sucessfully deleted&#x27; };
+  CardGenaretor(list, n) {
+    return new Array(n)
+      .fill(0)
+      .map(() &#x3D;&gt; list[Math.floor(Math.random() * list.length)]);
   }
 }
 </code></pre>

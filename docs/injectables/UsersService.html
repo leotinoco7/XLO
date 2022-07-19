@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>xbox-server documentation</title>
+        <title>TOP TRUMP documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">xbox-server documentation</a>
+            <a href="../" class="navbar-brand">TOP TRUMP documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -58,7 +58,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/users/users.service.ts</code>
+            <code>src/user/user.service.ts</code>
         </p>
 
 
@@ -84,7 +84,19 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#deleteMyAcc" >deleteMyAcc</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#findAll" >findAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findMyAcc" >findMyAcc</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findMyAlbum" >findMyAlbum</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -96,7 +108,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#update" >update</a>
+                                <a href="#updateMyAcc" >updateMyAcc</a>
                             </li>
                         </ul>
                     </td>
@@ -121,7 +133,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/users/users.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/user/user.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -186,8 +198,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/users/users.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/user/user.service.ts:19</a></div>
                 </td>
             </tr>
 
@@ -239,6 +251,77 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="deleteMyAcc"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteMyAcc</b></span>
+                        <a href="#deleteMyAcc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteMyAcc(loggedUser: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="248"
+                            class="link-to-prism">src/user/user.service.ts:248</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loggedUser</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="findAll"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
@@ -250,15 +333,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findAll()</code>
+                    <code>findAll(loggedUser)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/users/users.service.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/user/user.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -267,8 +350,178 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loggedUser</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>    <code>unknown</code>
 
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findMyAcc"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>findMyAcc</b></span>
+                        <a href="#findMyAcc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findMyAcc(loggedUser: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/user/user.service.ts:129</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loggedUser</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findMyAlbum"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>findMyAlbum</b></span>
+                        <a href="#findMyAlbum"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findMyAlbum(loggedUser: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/user/user.service.ts:183</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>loggedUser</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -289,15 +542,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, isAdmin: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/users/users.service.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/user/user.service.ts:80</a></div>
                 </td>
             </tr>
 
@@ -321,6 +574,18 @@
                                     <td>id</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isAdmin</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
                                     </td>
 
                                     <td>
@@ -360,15 +625,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>remove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>remove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, isAdmin: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/users/users.service.ts:121</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/user/user.service.ts:108</a></div>
                 </td>
             </tr>
 
@@ -392,6 +657,18 @@
                                     <td>id</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isAdmin</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
                                     </td>
 
                                     <td>
@@ -420,26 +697,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="update"></a>
+                    <a name="updateMyAcc"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
-                        <span ><b>update</b></span>
-                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>updateMyAcc</b></span>
+                        <a href="#updateMyAcc"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>update(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../classes/UpdateUserDto.html" target="_self">UpdateUserDto</a>)</code>
+                    <code>updateMyAcc(dto: <a href="../classes/UpdateUserDto.html" target="_self">UpdateUserDto</a>, loggedUser: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="90"
-                            class="link-to-prism">src/users/users.service.ts:90</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">src/user/user.service.ts:220</a></div>
                 </td>
             </tr>
 
@@ -460,9 +737,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>dto</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="../classes/UpdateUserDto.html" target="_self" >UpdateUserDto</a></code>
                                     </td>
 
                                     <td>
@@ -472,9 +749,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>dto</td>
+                                    <td>loggedUser</td>
                                     <td>
-                                                <code><a href="../classes/UpdateUserDto.html" target="_self" >UpdateUserDto</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
 
                                     <td>
@@ -505,14 +782,19 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  BadRequestException,
+  Injectable,
+  UnauthorizedException,
+} from &#x27;@nestjs/common&#x27;;
+import { Prisma } from &#x27;@prisma/client&#x27;;
+import * as bcrypt from &#x27;bcrypt&#x27;;
 import { PrismaService } from &#x27;src/prisma/prisma.service&#x27;;
+import { handleError } from &#x27;src/utils/handle-error.util&#x27;;
+import { isAdmin } from &#x27;src/utils/is-admin.util&#x27;;
+import { notFoundError } from &#x27;src/utils/not-found.util&#x27;;
 import { CreateUserDto } from &#x27;./dto/create-user.dto&#x27;;
 import { UpdateUserDto } from &#x27;./dto/update-user.dto&#x27;;
-import { User } from &#x27;./entities/user.entity&#x27;;
-import * as bcrypt from &#x27;bcrypt&#x27;;
-import { notFoundError } from &#x27;src/utils/not-found.util&#x27;;
-import { handleError } from &#x27;src/utils/handle-error.util&#x27;;
 
 @Injectable()
 export class UsersService {
@@ -529,9 +811,15 @@ export class UsersService {
       throw new BadRequestException(&#x27;This e-mail/CPF is already in use.&#x27;);
     }
 
-    const data: User &#x3D; {
-      ...dto,
+    const data: Prisma.UserCreateInput &#x3D; {
+      name: dto.name,
+      email: dto.email,
       password: await bcrypt.hash(dto.password, 10),
+      CPF: dto.CPF,
+      imageUrl: dto.imageUrl,
+      ranking: dto.ranking,
+      balance: dto.balance,
+      isAdmin: dto.isAdmin,
     };
 
     return await this.prisma.user
@@ -551,7 +839,11 @@ export class UsersService {
       .catch(handleError);
   }
 
-  async findAll() {
+  // -----------------------------------------------ADMIN------------------------------------------------
+
+  async findAll(loggedUser) {
+    isAdmin(loggedUser);
+
     return await this.prisma.user
       .findMany({
         select: {
@@ -569,7 +861,10 @@ export class UsersService {
       .catch(handleError);
   }
 
-  async findOne(id: string) {
+  async findOne(id: string, isAdmin: boolean) {
+    if (!isAdmin) {
+      throw new UnauthorizedException(&#x27;Access denied!&#x27;);
+    }
     const user &#x3D; await this.prisma.user
       .findUnique({
         where: {
@@ -594,21 +889,130 @@ export class UsersService {
     return user;
   }
 
-  async update(id: string, dto: UpdateUserDto) {
-    const data: Partial&lt;User&gt; &#x3D; { ...dto };
-
+  async remove(id: string, isAdmin: boolean) {
+    if (!isAdmin) {
+      throw new UnauthorizedException(&#x27;Access denied!&#x27;);
+    }
     notFoundError(
       await this.prisma.user.findUnique({ where: { id } }),
       &#x60;this user (${id})&#x60;,
     );
 
-    if (data.password) {
-      data.password &#x3D; await bcrypt.hash(data.password, 10);
+    await this.prisma.user
+      .delete({
+        where: {
+          id,
+        },
+      })
+      .catch(handleError);
+    return { message: &#x27;User successfully deleted!&#x27; };
+  }
+
+  // -----------------------------------------------MY ACCOUNT------------------------------------------------
+
+  async findMyAcc(loggedUser: string) {
+    const user &#x3D; await this.prisma.user
+      .findUnique({
+        where: {
+          id: loggedUser,
+        },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          CPF: true,
+          isAdmin: true,
+          password: false,
+          ranking: true,
+          balance: true,
+          imageUrl: true,
+          deck: {
+            select: {
+              id: true,
+              userToCard: {
+                select: {
+                  id: true,
+                  card: {
+                    select: {
+                      id: true,
+                      name: true,
+                      rarity: true,
+                      type: true,
+                      cardAttack: true,
+                      cardDef: true,
+                      collection: {
+                        select: {
+                          id: true,
+                          name: true,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          _count: {
+            select: {
+              utcs: true,
+            },
+          },
+        },
+      })
+      .catch(handleError);
+
+    return user;
+  }
+
+  async findMyAlbum(loggedUser: string) {
+    const user &#x3D; await this.prisma.user
+      .findUnique({
+        where: {
+          id: loggedUser,
+        },
+        select: {
+          id: true,
+          name: true,
+          utcs: {
+            select: {
+              id: true,
+              card: {
+                select: {
+                  id: true,
+                  name: true,
+                  rarity: true,
+                  type: true,
+                  cardAttack: true,
+                  cardDef: true,
+                  collection: {
+                    select: {
+                      id: true,
+                      name: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      })
+      .catch(handleError);
+
+    return user;
+  }
+
+  async updateMyAcc(dto: UpdateUserDto, loggedUser: string) {
+    if (dto.password) {
+      dto.password &#x3D; await bcrypt.hash(dto.password, 10);
     }
+
+    const data: Prisma.UserUpdateInput &#x3D; {
+      ...dto,
+    };
 
     return this.prisma.user
       .update({
-        where: { id },
+        where: { id: loggedUser },
         data,
         select: {
           id: true,
@@ -625,20 +1029,15 @@ export class UsersService {
       .catch(handleError);
   }
 
-  async remove(id: string) {
-    notFoundError(
-      await this.prisma.user.findUnique({ where: { id } }),
-      &#x60;this user (${id})&#x60;,
-    );
-
+  async deleteMyAcc(loggedUser: string) {
     await this.prisma.user
       .delete({
         where: {
-          id,
+          id: loggedUser,
         },
       })
       .catch(handleError);
-    return { message: &#x27;User successfully deleted!&#x27; };
+    return { message: &#x27;Your account was successfully deleted!&#x27; };
   }
 }
 </code></pre>
