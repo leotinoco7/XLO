@@ -13,12 +13,14 @@ async function bootstrap() {
     .setDescription('API developed to build a card game')
     .setVersion('1.0.0')
     .addTag('status')
+    .addTag('create-user')
     .addTag('auth')
-    .addTag('user')
-    .addTag('card')
+    .addTag('user-admin')
+    .addTag('user-my-account')
     .addTag('collection')
-    .addTag('deck')
+    .addTag('card')
     .addTag('pack')
+    .addTag('deck')
     .addBearerAuth()
     .build();
 

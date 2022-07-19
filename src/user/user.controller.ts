@@ -11,7 +11,7 @@ import {
 import { UsersService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { LoggedUser } from 'src/auth/logged-user.decorator';
 import { User } from '@prisma/client';
@@ -20,6 +20,9 @@ import { User } from '@prisma/client';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  @ApiOperation({
+    summary: 'Create a new user',
+  })
   @ApiTags('create-user')
   @Post('user')
   create(@Body() createUserDto: CreateUserDto) {
@@ -28,6 +31,9 @@ export class UsersController {
 
   // -----------------------------------------------ADMIN------------------------------------------------
 
+  @ApiOperation({
+    summary: 'Admin - List all users',
+  })
   @ApiTags('user-admin')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -36,6 +42,9 @@ export class UsersController {
     return this.usersService.findAll(user.isAdmin);
   }
 
+  @ApiOperation({
+    summary: 'Admin - List a user by ID',
+  })
   @ApiTags('user-admin')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -44,6 +53,9 @@ export class UsersController {
     return this.usersService.findOne(id, user.isAdmin);
   }
 
+  @ApiOperation({
+    summary: 'Admin - Edit a user by ID',
+  })
   @ApiTags('user-admin')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -54,6 +66,9 @@ export class UsersController {
 
   // -----------------------------------------------MY ACCOUNT------------------------------------------------
 
+  @ApiOperation({
+    summary: "Get logged user's account",
+  })
   @ApiTags('user-my-account')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -62,6 +77,9 @@ export class UsersController {
     return this.usersService.findMyAcc(user.id);
   }
 
+  @ApiOperation({
+    summary: "Get logged user's album",
+  })
   @ApiTags('user-my-account')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -70,6 +88,9 @@ export class UsersController {
     return this.usersService.findMyAlbum(user.id);
   }
 
+  @ApiOperation({
+    summary: "Edit logged user's account",
+  })
   @ApiTags('user-my-account')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -78,6 +99,9 @@ export class UsersController {
     return this.usersService.updateMyAcc(updateUserDto, user.id);
   }
 
+  @ApiOperation({
+    summary: "Delete logged user's account",
+  })
   @ApiTags('user-my-account')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()

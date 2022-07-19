@@ -12,7 +12,15 @@ export class PackService {
       where: { collectionId: dto.collectionId },
     });
 
-    const pack = await this.CreatePack(collection, 3);
+    const list = await this.CardGenaretor(collection, 3);
+    const pack = [];
+    list.forEach((card) => {
+      pack.push(card);
+    });
+
+    // const pack = await this.CreatePack(collection, 3);
+
+    console.log(pack);
 
     const transactions = pack.map((utc) =>
       this.prisma.userToCard.create({
@@ -34,19 +42,25 @@ export class PackService {
   }
 
   CreatePack(collection, qnt) {
-    const common = collection.map(function (card) {
+    const common = [];
+    const rare = [];
+    const legendary = [];
+    const pack = [];
+
+    collection.map(function (card) {
       if (card.rarity === 'COMMON') {
-        return card;
+        common.push(card);
       }
     });
-    const rare = collection.map(function (card) {
+
+    collection.map(function (card) {
       if (card.rarity === 'RARE') {
-        return card;
+        rare.push(card);
       }
     });
-    const legendary = collection.map(function (card) {
+    collection.map(function (card) {
       if (card.rarity === 'LEGENDARY') {
-        return card;
+        legendary.push(card);
       }
     });
 
@@ -54,20 +68,20 @@ export class PackService {
       throw new BadRequestException('');
     }
 
-    const pack = [];
-
     for (let i = 0; i < qnt; i++) {
       const rarity = Math.floor(Math.random() * 100) + 1;
 
       if (rarity >= 95) {
-        this.PackIncrement(legendary, 1, pack);
+        const leg = this.CardGenaretor(legendary, 1);
+        pack.push(leg);
       } else if (rarity >= 60) {
-        this.PackIncrement(rare, 1, pack);
+        const rar = this.CardGenaretor(rare, 1);
+        pack.push(rar);
       } else {
-        this.PackIncrement(common, 1, pack);
+        const com = this.CardGenaretor(common, 1);
+        pack.push(com);
       }
     }
-
     return pack;
   }
 
@@ -75,10 +89,5 @@ export class PackService {
     return new Array(n)
       .fill(0)
       .map(() => list[Math.floor(Math.random() * list.length)]);
-  }
-
-  PackIncrement(list, n, pack) {
-    const array = this.CardGenaretor(list, n);
-    array.forEach((item) => pack.push(item));
   }
 }

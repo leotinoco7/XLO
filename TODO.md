@@ -6,31 +6,26 @@
 - [ ] Create Seed
 
 ## In Progress
-
-- [ ] Reorganize Swagger
-- [ ] Create ApiOperations [Collection]
-- [ ] Create ApiOperations [Pack]
-- [ ] Create ApiOperations [User]
-- [ ] Create ApiOperations [Deck]
-
-- [x] Fix Update myAccount [User]
-- [x] Fix Create collection - unique name
-- [x] Remove AuthGuard [collection] findAll & findOne
-- [x] Treat Rarity input [Card] 
-
 - [ ] Add findAll 'myaccount/cards' [User] controller
-- [ ] Add findOne 'myaccount/album' [User] controller
+- [ ] Change '/GET' findOneCollection return
 - [ ] Add findAll 'cards' [Card] controller
 - [ ] Refactor findOne [Collection] controller (select cards[])
 
 ## Done ✓
 
 - [x] Schema relation
-- [x] Refactor [User] service
-      - [x] Create [Admin] endpoints
-      - [x] Create [MyAccount] endpoints
-- [x] Refactor [Collection] service
+- [x] Refactor [User] service 
+      - [x] Create [Admin] endpoints 
+      - [x] Create [MyAccount] endpoints 
+      - [x] Fix Update myAccount [User] 
+      - [x] Create ApiOperations [User]
+      - [x] Add findOne 'myaccount/album' [User] controller
+- [x] Refactor [Collection] service 
+      - [x] Fix Create [Collection] unique name 
+      - [x] Remove AuthGuard [collection] findAll & findOne 
+      - [x] Create ApiOperations [Collection]
 - [x] Refactor [Deck] service
-- [x] Refactor [Card] service
-- [x] Refactor [Pack] service
-      - [x] Create function pack()
+      - [x] Create ApiOperations [Deck]
+- [x] Refactor [Card] service - [x] Treat Rarity input [Card]
+- [x] Refactor [Pack] service - [x] Create function pack() - [x] Create ApiOperations [Pack]
+- [x] Reorganize Swagger

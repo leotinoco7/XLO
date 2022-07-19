@@ -11,21 +11,16 @@ import { UpdateCardDto } from './dto/update-card.dto';
 export class CardService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(dto: CreateCardDto, loggedUser) {
-    async function collectionLimit() {
-      const limit = await this.prisma.collection.findUnique({
-        where: { id: dto.collectionId },
-      });
-
-      if (limit.cards.length >= limit.cardNumber) {
-        throw new BadRequestException(
-          'This collection has reached its card limit.',
-        );
-      }
-    }
-
+  async create(dto: CreateCardDto, loggedUser) {
     isAdmin(loggedUser);
-    collectionLimit();
+
+    const limit = await this.collectionLimit(dto);
+
+    if (!limit) {
+      throw new BadRequestException({
+        message: 'This collection has reached its limit!',
+      });
+    }
 
     const data: Prisma.CardCreateInput = {
       name: dto.name,
@@ -67,6 +62,7 @@ export class CardService {
     const data: Prisma.CardUpdateInput = {
       ...dto,
     };
+    data.rarity = this.dataTreatment(data.rarity);
     notFoundError(
       await this.prisma.card.findUnique({ where: { id } }),
       `this card (${id})`,
@@ -94,5 +90,20 @@ export class CardService {
       .normalize('NFD')
       .replace(/[^a-zA-Zs]/g, '')
       .toUpperCase();
+  }
+  async collectionLimit(dto) {
+    const limit = await this.prisma.collection.findUnique({
+      where: { id: dto.collectionId },
+      include: {
+        cards: true,
+      },
+    });
+    console.log({ limit });
+    console.log(limit.cards.length);
+    if (limit.cards.length >= limit.cardNumber) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
