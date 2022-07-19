@@ -98,8 +98,7 @@ export class CardService {
         cards: true,
       },
     });
-    console.log({ limit });
-    console.log(limit.cards.length);
+
     if (limit.cards.length >= limit.cardNumber) {
       return false;
     } else {

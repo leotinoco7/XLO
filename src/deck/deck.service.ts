@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { handleError } from 'src/utils/handle-error.util';
@@ -8,18 +8,8 @@ import { CreateDeckDto } from './dto/create-deck.dto';
 @Injectable()
 export class DeckService {
   constructor(private readonly prisma: PrismaService) {}
+
   async create(dto: CreateDeckDto, loggedUserId) {
-    async function deckLimit(limitNumber) {
-      const limit = await this.prisma.deck.findMany({
-        where: { userId: loggedUserId },
-      });
-
-      if (limit.length >= limitNumber) {
-        throw new BadRequestException('Your deck has reached its limit.');
-      }
-    }
-
-    deckLimit(3);
     const data: Prisma.DeckCreateInput = {
       user: {
         connect: {
